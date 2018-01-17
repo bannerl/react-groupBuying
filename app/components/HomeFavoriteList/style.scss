@@ -1,6 +1,9 @@
 @charset "utf-8";
 
 .home-favo-wrapper{
+    a{
+        display: block;
+    }
     .favo-item{
         padding: .12rem .14rem .12rem 0;
         margin-left: .12rem;

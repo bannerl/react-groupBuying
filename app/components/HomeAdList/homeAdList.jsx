@@ -29,13 +29,15 @@ class HomeAdList extends React.Component {
 				{
 					data.length
 					?data.map((item,i)=>{
-						return <Link to={'/'+item.path} key={i}><li class="ad-item border-1px-right">
-							<h4 class={'title '+item.color}>{item.title}</h4>
-							<p class="description">{item.description}</p>
-							<div class="image-wrapper">
-								<img src={item.url} />
-							</div>
-						</li></Link>
+						return <Link class="border-1px-right" to={'/'+item.path} key={i}>
+							<li class="adver-item">
+								<h4 class={'title '+item.color}>{item.title}</h4>
+								<p class="description">{item.description}</p>
+								<div class="image-wrapper">
+									<img src={item.url} />
+								</div>
+							</li>
+						</Link>
 					})
 					:<div class="loading">
 						<img src='./image/homeAdBg.svg' />
