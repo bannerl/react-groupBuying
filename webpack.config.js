@@ -26,7 +26,7 @@ module.exports = {
     contentBase: "./app",//本地服务器所加载的页面所在的目录
     historyApiFallback: true,//不跳转
     inline: true,//实时刷新
-    port:8081
+    port:8080
   },
   module: {
     rules: [
@@ -66,7 +66,7 @@ module.exports = {
     }),
     // 打开浏览器
     new OpenBrowserPlugin({
-      url: 'http://localhost:8081'
+      url: 'http://localhost:8080'
     }),
     new webpack.HotModuleReplacementPlugin(),//热加载插件
 	]
