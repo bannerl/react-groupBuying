@@ -1,0 +1,30 @@
+.home-header{
+    display: flex;
+    align-items: center;
+    background: #ff3131;
+    font-size: .15rem;
+    color: #fff;
+    .city{
+       padding:.1rem .09rem .1rem .12rem;
+       .iconfont{
+           margin-left: .04rem;
+           font-size: .12rem;
+       }
+    }
+    .search{
+        flex: 1;
+        input{
+            height: .26rem;
+            width: 100%;
+            padding-left: .06rem;
+            border-radius: .12rem;
+            color: #333;
+        }
+        input::-webkit-input-placeholder{
+            color: #aaa;
+        }
+    }
+    .user{
+        padding:.1rem .12rem;
+    }
+}

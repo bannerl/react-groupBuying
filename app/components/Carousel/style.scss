@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+#home-carousel {
+    font-size: 0;
+    margin-bottom: .12rem;
+    .item-wrapper{
+        padding: .18rem .14rem .02rem;
+        a{
+            display: inline-block;
+            width: 20%;
+            text-align: center;
+            box-sizing: border-box;
+            margin-bottom: .06rem;
+        }
+    }
+    .icon-wrapper{
+        height: .42rem;
+        width: .42rem;
+        background: #e24c4c;
+        border-radius: 50%;
+        text-align: center;
+        line-height: .42rem;
+        margin: 0 auto;
+    }
+    .iconfont{
+        color: #fff;
+        font-size: .22rem;
+    }
+    .text{
+        font-size: .13rem;
+        color: #333;
+        font-family: "微软雅黑";
+        padding: .03rem 0;
+    }
+    .current-position {
+        height: .06rem;
+        text-align: center;
+        span{
+            display: inline-block;
+            width: .06rem;
+            height: .06rem;
+            background: #999;
+            border-radius: 50%;
+            margin: 0 .02rem;
+            &.on{
+                background: #ff3131;
+            }
+        }
+    }
+}

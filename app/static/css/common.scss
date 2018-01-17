@@ -1,0 +1,154 @@
+/*公共样式--开始*/
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+    margin: 0;
+    padding: 0;
+}
+*{box-sizing: border-box;}
+html, body {
+    min-height: 100%;
+    font-size: 100px;
+}
+
+body {
+    font-family: "Microsoft YaHei";
+    font-size:.14rem;
+    color:#333;
+}
+h1, h2, h3, h4, h5, h6{font-weight:normal;}
+ul,ol {
+    list-style: none;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: #232323;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+input, textarea {
+    outline: none;
+    border: none;
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: ".";
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    overflow:hidden;
+}
+
+.float-left {
+    float: left
+}
+
+.float-right {
+    float: right
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.ellipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.inline{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+
+.border-1px{
+    position: relative;
+    &:after{
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        font-size: 0;
+        border-bottom: 1px solid #ddd;
+        transform: scaleY(.5);
+        content: '.';
+         @media (-webkit-min-device-pixel-ratio:3),(min-device-pixel-ratio:3){
+            transform: scaleY(.3);
+        }
+    }    
+}
+
+.border-1px-top{
+    position: relative;
+    &:before{
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 0;
+        border-top: 1px solid #ddd;
+        transform: scaleY(.5);
+        content: '.';
+    }    
+}
+.border-1px-right{
+    position:relative;
+    &:after{
+        position:absolute;
+        height: 100%;
+        right: 0;
+        top: 0;
+        border-right: 1px solid #ddd;
+        transform: scaleX(.5);
+        content: '';
+        @media (-webkit-min-device-pixel-ratio:3),(min-device-pixel-ratio:3){
+            transform: scaleX(.3);
+        }
+    }
+}
+.border-1px-left{
+    position:relative;
+    &:after{
+        position:absolute;
+        height: 100%;
+        right: 0;
+        top: 0;
+        border-left: 1px solid #ddd;
+        transform: scaleX(.5);
+        content: '';
+        @media (-webkit-min-device-pixel-ratio:3),(min-device-pixel-ratio:3){
+            transform: scaleX(.3);
+        }
+    }
+}

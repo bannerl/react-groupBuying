@@ -1,0 +1,36 @@
+.home-favo-title {
+    padding: .12rem .14rem .08rem;
+    font-size: .17rem;
+}
+
+.load-more{
+    padding: .1rem .12rem;
+    text-align: center;
+    font-size: .16rem;
+    &.hidden{
+        display: none;
+    }
+}
+
+.home-loading-animation{
+    display: inline-block;
+    animation-name: homeLoading;
+    animation-duration: 1s;
+    animation-play-state: running;
+    animation-delay: 0s;
+    width: .2rem;
+    height: .2rem;
+    border-radius: 50%;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    border: 3px solid #666;
+    border-top-color: transparent;
+}
+
+
+@keyframes homeLoading{
+    from {
+        transform: rotate(0deg);
+    }
+    to {transform: rotate(360deg);}
+}

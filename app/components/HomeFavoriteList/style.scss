@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+.home-favo-wrapper{
+    .favo-item{
+        padding: .12rem .14rem .12rem 0;
+        margin-left: .12rem;
+        display: flex;
+    }
+    .image-wrapper{
+        width: .86rem;
+        margin-right: .12rem;
+        img{
+            width: .86rem;
+            height: .86rem;
+        }
+    }
+    .content{
+        flex: 1;
+        width: 0;
+    }
+    .title{
+        padding:0 0 .05rem 0;
+        font-size: .16rem;
+        color: #333;
+    }
+    .description{
+        height: .36rem;
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        font-size: .13rem;
+        line-height: .18rem;
+        -webkit-box-orient: vertical;
+        color: #555;
+    }
+    .abstract {
+        margin-top: .04rem;
+        .price{
+            color: #ff3131;
+            font-size: .18rem;
+            font-weight: 700;
+        }
+        .count{
+            font-size: .14rem;
+            color: #666;
+        }
+    }
+}
