@@ -1,0 +1,22 @@
+.header {
+    position: relative;
+    background: #ff3131;
+    .return {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: .13rem .14rem;
+        color: #fff;
+        line-height: .14rem;
+        .iconfont{
+            font-size: .14rem;
+        }
+    }
+    .title {
+        text-align: center;
+        padding: .13rem 0;
+        font-size: .14rem;
+        line-height: .14rem;
+        color: #fff;
+    }
+}

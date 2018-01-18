@@ -34,11 +34,8 @@ class Home extends React.Component {
 	
 	componentDidMount () {
 		//获取路由参数
-		var arr = window.location.href.split('/');
-		var sellerId = arr[arr.length-1].split('?')[0];
 		var obj = loadUrl(window.location.href);
-		obj.sellerId = sellerId;
-		
+		obj.sellerId = this.props.params.id;
 		//发送请求
 		var result = getDetail(obj);
 		

@@ -1,11 +1,11 @@
 import React from 'react';
-import { render } from 'react-dom';
 import { Router, Route, IndexRoute } from 'react-router';
 
 import Index from '../containers/index';
 import Home from '../containers/Home/home';
 import NotFound from '../containers/404';
 import Detail from '../containers/Detail/detail';
+import City from '../containers/City/city';
 
 class RouterMap extends React.Component {
 	render () {
@@ -14,6 +14,7 @@ class RouterMap extends React.Component {
 				<Route path="/" component={Index} >
 					<IndexRoute component={Home} />
 					<Route path="/shop/:id" component={Detail} />
+					<Route path='/city' component={City} />
 					<Route path='*' component={NotFound} />
 				</Route>
 			</Router>
