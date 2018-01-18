@@ -5,6 +5,21 @@ var router =  Router();
 
 app.use(router['routes']());
 
+function getQueryObject(url) {
+    url = url == null ? window.location.href : url;
+    var search = url.substring(url.lastIndexOf("?") + 1);
+    var obj = {};
+    var reg = /([^?&=]+)=([^?&=]*)/g;
+    search.replace(reg, function (rs, $1, $2) {
+        var name = decodeURIComponent($1);
+        var val = decodeURIComponent($2);               
+        val = String(val);
+        obj[name] = val;
+        return rs;
+    });
+    return obj;
+}
+
 /*首页广告*/
 var homeAdList = require('./home/adList');
 router.get('/api/homead',function (ctx,next){
@@ -28,6 +43,15 @@ router.get('/api/homelist/:city/:page',function (ctx,next){
 	} else {
 		ctx.body = [];
 	}
+});
+
+/*商品详情*/
+var ShopDetail = require('./detail/detail');
+router.get('/api/shop/:sellerid',function (ctx,next){
+	var arr = ctx.url.split('/');
+	var id = arr[arr.length-1].split('?')[0];
+	var params = getQueryObject(ctx.url);
+	ctx.body = ShopDetail[id-1];
 });
 
 app.use(router.routes())

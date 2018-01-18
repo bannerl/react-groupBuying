@@ -1,0 +1,54 @@
+.detail-abstract {
+    .image-wrapper{
+        position: relative;
+        padding-top: 56%;
+        width: 100%;
+        overflow: hidden;
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .content{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            padding: 0 .14rem .12rem;
+            .title{
+                font-size: .18rem;
+                font-weight: 700;
+                color: #fff;
+                line-height: .32rem;
+            }
+            .desc{
+                font-size: .14rem;
+                color: #fff;
+            }
+        }
+    }
+    .price-wrapper{
+        padding: .12rem .14rem;
+        height: .56rem; 
+        &:before{
+            content: '';
+            display: table;
+        }
+        .price {
+            position: relative;
+            color: #ff3131;
+            font-size: .22rem;
+            font-weight: 700;
+            line-height: .32rem;
+            &:after{
+                content: '元';
+                font-size: .14rem;
+                font-weight: 400;
+            }
+        }
+        .btn-buy {
+            background: #f90;
+        }
+    }
+}

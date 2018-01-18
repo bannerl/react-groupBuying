@@ -1,0 +1,35 @@
+.detail-package{
+    .title{
+        padding: .14rem .14rem .1rem;
+        font-size: .17rem;
+        color: #333;
+    } 
+    .item {
+        display: flex;
+        >div{
+            padding: .12rem .06rem;
+            text-align: center;
+        }
+        &:last-child {
+            &:after{
+                border: none;
+            }
+        }
+    }
+    .item-title{
+        flex: 1;
+        width: 0;
+    }
+    .item-count{
+        padding-left: .16rem;
+        padding-right: .16rem;
+        min-width: .9rem;
+        font-size: .14rem;
+    }
+    .item-price{
+         padding-left: .16rem;
+        padding-right: .16rem;
+        min-width: .9rem;
+        font-size: .14rem;
+    }
+}

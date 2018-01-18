@@ -15,7 +15,7 @@ class HomeFavoriteList extends React.Component {
 		const dataContent = data.length
 		?data.map((item,i)=>{
 			return (
-				<Link to={'/shop/'+item.id} key={i}>
+				<Link to={'/shop/'+item.id+'?id='+Math.floor(Math.random()*10)} key={i}>
 					<li class="favo-item border-1px">
 						<div class="image-wrapper">
 							<img src={item.image} alt="商品" />

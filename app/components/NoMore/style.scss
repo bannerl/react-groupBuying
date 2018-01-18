@@ -1,0 +1,31 @@
+@charset 'utf-8';
+
+.no-more {
+    width: 100%;
+    padding: .04rem 0;
+    text-align: center;
+    background: #f5f5f5;
+    .text {
+        font-family: "微软雅黑";
+        color: #999; 
+        font-size: .13rem; 
+        &:before{
+            font-size: 0;
+            content: '';
+            margin:0 .1rem;
+            display: inline-block;
+            width: .40rem;
+            vertical-align: middle;
+            border-top: 1px solid #ddd;
+        }
+         &:after{
+            font-size: 0;
+            content: '';
+            margin:0 .1rem;
+            display: inline-block;
+            vertical-align: middle;
+            width: .40rem;
+            border-top: 1px solid #ddd;
+        }
+    }
+}

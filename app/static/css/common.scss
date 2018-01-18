@@ -152,3 +152,19 @@ textarea {
         }
     }
 }
+.btn {
+    display: inline-block;
+    height: .32rem;
+    padding: 0 .16rem;
+    margin: 0;
+    text-align: center;
+    border-radius: .06rem;
+    font-size: .16rem;
+    line-height: .32rem;
+    border: 0;
+    color: #fff;
+    background-color: #ff3131;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-user-select: none;
+}

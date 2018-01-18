@@ -1,0 +1,34 @@
+.detail-notice {
+    .title{
+        padding: .14rem .14rem .1rem;
+        font-size: .17rem;
+        color: #333;
+    }
+    .content-wrapper{
+        padding: .08rem .14rem .18rem;
+        .yellow {
+            color: #f90;
+            font-size: .16rem;
+            padding: .04rem 0;
+        }
+    }
+    .validaty{
+        font-size: .14rem;
+        color: #333;
+        margin-left: .08rem;
+    }
+    .use-text {
+        font-size: .14rem;
+        color: #333;
+        margin-left: .08rem;
+    }
+    .tips{
+        padding-left: .24rem;
+        .item{
+            font-size: .14rem;
+            color: #333;
+            padding: .04rem 0;
+            list-style: initial;
+        }
+    }
+}
