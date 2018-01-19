@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import './style.scss';

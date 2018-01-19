@@ -6,6 +6,8 @@ import Home from '../containers/Home/home';
 import NotFound from '../containers/404';
 import Detail from '../containers/Detail/detail';
 import City from '../containers/City/city';
+import searchInputPage from '../containers/searchInputPage/searchinputpage';
+import searchResult from '../containers/searchResult/searchresult';
 
 class RouterMap extends React.Component {
 	render () {
@@ -15,6 +17,10 @@ class RouterMap extends React.Component {
 					<IndexRoute component={Home} />
 					<Route path="/shop/:id" component={Detail} />
 					<Route path='/city' component={City} />
+					<Route path='/searchInputPage' component={searchInputPage} />
+					<Route path='/all/:kwd' component={searchResult} />
+					
+					
 					<Route path='*' component={NotFound} />
 				</Route>
 			</Router>

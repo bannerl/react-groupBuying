@@ -11,6 +11,9 @@ class Home extends React.Component {
 	constructor (props,context) {
 		super(props,context);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+		this.state = {
+			inputPageState:false
+		}
 	}
 	render () {
 		const { cityName } = this.props;
@@ -24,6 +27,12 @@ class Home extends React.Component {
 				<FavoriteList cityName={cityName} />
 			</div>
 		)
+	}
+	
+	searchHandle (e,val) {
+		if(val) {
+			
+		}
 	}
 }
 

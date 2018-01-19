@@ -12,16 +12,16 @@ class Home extends React.Component {
 	render() {
 		return (
 			<div class="header">
-				<Link class="return">
-					<i class="iconfont icon-xiala"></i>
-				</Link>
+				<div class="return" onClick={this.clickHandle.bind(this)}>
+					<i class="iconfont icon-fanhui"></i>
+				</div>
 				<div class="title">{this.props.title}</div>
 			</div>
 		);
 	};
 	
-	componentDidMount () {
-		
+	clickHandle () {
+		window.history.back();
 	}
 }
 

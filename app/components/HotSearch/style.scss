@@ -1,0 +1,20 @@
+.hot-search-wrapper {
+    padding-left: .14rem;
+    background: #fff;
+}
+.hot-search-title {
+    padding: .10rem 0;
+    font-size: .16rem;
+}
+
+.hot-item-wrapper {
+    padding-top: .14rem;
+    .hot-item {
+        padding: 0 .14rem;
+        height: .28rem;
+        line-height: .28rem;
+        border: 1px solid #eee;
+        margin:0 .14rem .14rem 0;
+        font-size: .13rem;
+    }
+}

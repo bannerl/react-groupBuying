@@ -19,6 +19,7 @@ class City extends React.Component {
 			<div>
 				<Header title="城市列表" />			
 				<CitySelect cityName={this.props.cityName} />
+				<div style={{"height":".13rem","background":'#f5f5f5'}}></div>
 				<HotCity cityHandle={this.toggleCity.bind(this)} />
 			</div>
 		);

@@ -1,0 +1,22 @@
+.hot-city{
+    .title {
+        padding: .14rem .14rem .1rem;
+        font-size: .16rem;
+        color: #333;
+    }
+    ul{
+        padding: .14rem;
+    }
+    .item{
+        width: 25%;
+        text-align: center;
+        margin-bottom: .06rem;
+        padding: .02rem .12rem;
+        span {
+            display: inline-block;
+            width: 100%;
+            padding: .06rem 0;
+            box-shadow: 0 0 2px #ccc;
+        }
+    }
+}

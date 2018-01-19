@@ -14,16 +14,12 @@ class Home extends React.Component {
 			"padding": ".3rem 0",
 			"background": "#fff",
 			textAlign: "center",
-			fontSize: ".18rem"
+			fontSize: ".20rem"
 		}
 		return (
 			<div style={style}>{this.props.cityName}</div>
 		);
 	};
-	
-	componentDidMount () {
-		
-	}
 }
 
 export default Home;

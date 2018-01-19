@@ -22,5 +22,17 @@ export default {
                 console.error('localStorage.setItem报错, ', ex.message)
             }
         }
+    },
+    set: function (key,value) {
+    	value = JSON.stringify(value);
+    	localStorage[key] = value;
+    },
+    get: function (key) {
+    	let value = localStorage[key];
+    	if(value != null ) {
+    		return JSON.parse(value);
+    	} else {
+    		return null;
+    	}
     }
 }

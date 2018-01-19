@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-import PureRenderMixin from 'react-addons-pure-render-mixin'
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+import SearchInput from '../SearchInput/searchinput';
 import './style.scss';
 
 class HomeHeader extends React.Component {
@@ -18,7 +19,7 @@ class HomeHeader extends React.Component {
 					</Link>	
 				</div>
 				<div class="search">
-					<input type="text" placeholder="请输入商品或者店铺名称" />
+					<SearchInput/>
 				</div>
 				<div class="user">
 					<i class="iconfont icon-user"></i>

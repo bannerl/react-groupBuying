@@ -54,6 +54,12 @@ router.get('/api/shop/:sellerid',function (ctx,next){
 	ctx.body = ShopDetail[id-1];
 });
 
+/*热门搜索*/
+var HotSearch = require('./searchPage/hotSearch');
+router.get('/api/hotsearch',function (ctx,next){
+	ctx.body = HotSearch;
+});
+
 app.use(router.routes())
    .use(router.allowedMethods());
    

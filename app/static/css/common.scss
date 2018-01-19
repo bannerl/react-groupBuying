@@ -4,7 +4,7 @@ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input,
     padding: 0;
 }
 *{box-sizing: border-box;}
-html, body {
+html {
     min-height: 100%;
     font-size: 100px;
 }
@@ -13,6 +13,7 @@ body {
     font-family: "Microsoft YaHei";
     font-size:.14rem;
     color:#333;
+    min-height: 100vh;
 }
 h1, h2, h3, h4, h5, h6{font-weight:normal;}
 ul,ol {
