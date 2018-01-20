@@ -121,6 +121,9 @@ textarea {
         border-top: 1px solid #ddd;
         transform: scaleY(.5);
         content: '.';
+        @media (-webkit-min-device-pixel-ratio:3),(min-device-pixel-ratio:3){
+            transform: scaleY(.3);
+        }
     }    
 }
 .border-1px-right{
@@ -143,7 +146,7 @@ textarea {
     &:after{
         position:absolute;
         height: 100%;
-        right: 0;
+        left: 0;
         top: 0;
         border-left: 1px solid #ddd;
         transform: scaleX(.5);

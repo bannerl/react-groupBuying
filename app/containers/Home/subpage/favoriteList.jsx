@@ -28,6 +28,7 @@ class FavoriteList extends React.Component {
 			</div>
 		)
 	}
+	
 	//加载更多
 	loadMore () {
 		let {page} = this.state;
@@ -45,6 +46,7 @@ class FavoriteList extends React.Component {
 	}
 	
 	componentDidMount () {
+		let self = this;
 		let result = getFavoriteListData(this.props.cityName,this.state.page);
 		this.handlerResult(result,this.state.page);
 	}

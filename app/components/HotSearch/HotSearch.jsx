@@ -17,7 +17,7 @@ class HotSearch extends React.Component {
 				<div class="hot-item-wrapper clearfix">
 					{data.map((item,i) => {
 						return (
-							<Link to={"/all/"+encodeURIComponent(item)} class="hot-item float-left" key={i}>{item}</Link>
+							<Link to={"/search/all/"+encodeURIComponent(item)} class="hot-item float-left" key={i}>{item}</Link>
 						)
 					})}
 				</div>
