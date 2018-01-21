@@ -39,7 +39,6 @@ class SearchInput extends React.Component {
 	
 	//清空数据
 	deleteText () {
-		console.log(1)
 		this.setState({
 			value:'',
 			closeState:false
@@ -68,7 +67,9 @@ class SearchInput extends React.Component {
 	}
 	//键盘按下事件传到父节点中
 	KeyUpHandle (val,e) {
-		this.props.keyUpHandle(val,e)
+		if(this.props.KeyUpHandle){
+			this.props.keyUpHandle(val,e)
+		}
 	}
 	componentDidMount () {
 		if(this.props.IsFocus) {

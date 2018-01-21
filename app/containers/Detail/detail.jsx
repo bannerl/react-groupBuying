@@ -8,6 +8,7 @@ import Abstract from '../../components/DetailAbstract/abstract';
 import PackageContent from '../../components/DetailPackage/packageContent';
 import Notice from '../../components/DetailNotice/notice';
 import NoMore from '../../components/NoMore/nomore';
+import Header from '../../components/Header/header';
 
 class Home extends React.Component {
 	constructor(props,context) {
@@ -22,6 +23,7 @@ class Home extends React.Component {
 		const {data} = this.state;
 		return (
 			<div>
+				<Header title="商品详情" />
 				<Abstract data={data} />
 				<div style={{"height":".13rem","background":'#f5f5f5'}}></div>
 				<PackageContent data={data.package} />

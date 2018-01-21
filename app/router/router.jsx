@@ -7,6 +7,8 @@ import NotFound from '../containers/404';
 import Detail from '../containers/Detail/detail';
 import City from '../containers/City/city';
 import Search from '../containers/Search/search';
+import User from '../containers/User/user';
+import Login from '../containers/Login/login';
 
 class RouterMap extends React.Component {
 	render () {
@@ -16,7 +18,9 @@ class RouterMap extends React.Component {
 					<IndexRoute component={Home} />
 					<Route path="/shop/:id" component={Detail} />
 					<Route path='/city' component={City} />
-					<Route path='/search/:type/:kwd' component={Search} />
+					<Route path='/search/:type(/:router)' component={Search} />
+					<Route path='/user' component={User} />
+					<Route path='/login(/:router)' component={Login} />
 					
 					<Route path='*' component={NotFound} />
 				</Route>

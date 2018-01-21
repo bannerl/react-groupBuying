@@ -1,0 +1,55 @@
+.login-wrapper {
+    position: absolute;
+    top: .4rem;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    z-index: 1;
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%,-50%,0);
+        width: 86%;
+        padding: 0 .14rem;
+    }
+    .border-1px:after{
+        border-color: #ff3131;
+    }
+    .phone {
+        padding: .04rem 0;
+        display: flex;
+        margin-bottom: .2rem;
+        .input-bind{
+            flex: 1;
+        }
+        .btn {
+            background: #fff;
+            color: #ff3131;
+            padding: 0;
+            font-size: .14rem;
+            -webkit-tap-highlight-color: transparent;
+        }
+    }
+    .code {
+        display: flex;
+        padding: .04rem 0;
+    }
+    .login-btn {
+        margin: .3rem 0;
+        padding: .08rem 0;
+        font-size: .16rem;
+        color: #fff;
+        background-color: #ff3131;
+        border-radius: .04rem;
+        text-align: center;
+        -webkit-tap-highlight-color: transparent;
+        cursor: pointer;
+        &.active{
+            color: rgba(255,255,255,.3);
+            background: #e94f4f;
+        }
+    }
+    
+}

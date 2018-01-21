@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { getFavoriteListData } from '../../../fetch/home/home';
 import HomeFavoriteList from '../../../components/HomeFavoriteList/homelist';
+import LoadMore from '../../../components/LoadMore/loadmore';
 import './style.scss'; 
 
 class FavoriteList extends React.Component {
@@ -22,9 +23,7 @@ class FavoriteList extends React.Component {
 			<div>
 				<h3 class="home-favo-title border-1px">猜你喜欢</h3>
 				<HomeFavoriteList data={data} />
-				<div class={(hasMore?"":"hidden")+" load-more"} onClick={this.loadMore.bind(this)}>
-				{isLoading?<div><span class="home-loading-animation"></span></div>:'加载更多'}
-				</div>
+				<LoadMore isLoading={isLoading} hasMore={hasMore} loadMore={this.loadMore.bind(this)} />
 			</div>
 		)
 	}

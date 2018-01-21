@@ -6,20 +6,18 @@ import HomeHeader from '../../components/HomeHeader/homeheader';
 import Carousel from '../../components/Carousel/carousel';
 import ListAd from './subpage/listAd';
 import FavoriteList from './subpage/favoriteList';
+import * as UserInfoActions from '../../actions/userinfo';
 
 class Home extends React.Component {
 	constructor (props,context) {
 		super(props,context);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
-		this.state = {
-			inputPageState:false
-		}
 	}
 	render () {
-		const { cityName } = this.props;
+		const { cityName,userName } = this.props;
 		return (
 			<div>
-				<HomeHeader cityName={cityName} />
+				<HomeHeader cityName={cityName}/>
 				<Carousel />
 				<div style={{"height":".13rem","background":'#f5f5f5'}}></div>
 				<ListAd />
@@ -28,22 +26,19 @@ class Home extends React.Component {
 			</div>
 		)
 	}
-	
-	searchHandle (e,val) {
-		if(val) {
-			
-		}
-	}
 }
 
 function mapStateToProps (state) {
 	return {
-		cityName:state.userinfo.cityName
+		cityName:state.userinfo.cityName,
+		userName:state.userinfo.userName
 	}
 }
 
-function mapDispatchToProps () {
-	return {}
+function mapDispatchToProps (dispath) {
+	return {
+		InfoActions: bindActionCreators(UserInfoActions,dispath)
+	}
 }
 
 const HomeContainer = connect (

@@ -60,6 +60,11 @@ router.get('/api/hotsearch',function (ctx,next){
 	ctx.body = HotSearch;
 });
 
+/*搜索结果*/
+router.get('/api/search',function (ctx,next){
+	ctx.body = FavoriteList.slice(2,8);
+});
+
 app.use(router.routes())
    .use(router.allowedMethods());
    

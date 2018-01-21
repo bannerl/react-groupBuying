@@ -19,11 +19,11 @@ class HomeHeader extends React.Component {
 					</Link>	
 				</div>
 				<div class="search">
-					<SearchInput/>
+					<SearchInput linkTo="/search/all/index"/>
 				</div>
-				<div class="user">
+				<Link class="user" to='/login'>
 					<i class="iconfont icon-user"></i>
-				</div>
+				</Link>
 			</div>
 		)
 	}

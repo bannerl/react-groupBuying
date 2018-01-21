@@ -13,7 +13,7 @@ class SearchHot extends React.Component {
 	}
 	render () {
 		return (
-			<HotSearch data={this.state.data} />
+			<HotSearch router={this.props.router} data={this.state.data} />
 		)
 	}
 	

@@ -6,6 +6,9 @@ import SearchHeader from './subpage/header';
 import SearchHot from './subpage/searchhot';
 import SearchHistory from './subpage/searchhistory';
 import HomeFavoriteList from '../../components/HomeFavoriteList/homelist';
+import { getSearchResult } from '../../fetch/searchPage/searchpage';
+import ResultList from '../../components/ResultList/resultlist';
+import LoadMore from '../../components/LoadMore/loadmore';
 
 class Search extends React.Component {
 	constructor(props,context) {
@@ -17,35 +20,89 @@ class Search extends React.Component {
 			hasMore:true,
 			isLoading:false,
 			page:0,
-			isResult:false
+			isResult:false,
+			router:''
 		}
 	};
 	
 	render() {
+		const {isLoading,hasMore} = this.state;
 		return (
 			<div class="search-input-page">
-				<SearchHeader getData={this.getData.bind(this)} />
+				<SearchHeader router={this.state.router} getData={this.getData.bind(this)} />
 				{
 					this.state.isResult
-					?'这是结果页面'
+					?<div>
+						<ResultList data={this.state.data} />
+							<LoadMore 
+							isLoading={isLoading} 
+							hasMore={hasMore} 
+							loadMore={this.loadMore.bind(this)} 
+						/>
+					</div>
 					:<div>
-						<SearchHot />
-						<SearchHistory />
+						<SearchHot router={this.state.router} />
+						<SearchHistory router={this.state.router} />
 					</div>
 				}
 			</div>
 		);
 	};
 	
-	componentWillReceiveProps () {
-		console.log(1)
+	loadMore () {
+		const router = this.props.params.router;
+		const kwd = this.props.location.query.kwd;
+		this.setState({
+			router,
+			isLoading:true
+		});
+		if(kwd){
+			setTimeout(() => {
+				this.getData(kwd);
+			},1000);
+		}
+	}
+	
+	componentWillMount () {
+		const router = this.props.params.router;
+		const kwd = this.props.location.query.kwd;
+		this.setState({router});
+		if(kwd){
+			this.getData(kwd);
+		}
+	}
+	
+	//获取路由变化，获取数据
+	componentWillReceiveProps (nextProps) {
+		const prevKwd = this.props.location.query.kwd;
+		const nextKwd = nextProps.location.query.kwd;
+		
+		if(prevKwd !== nextKwd&&nextKwd != null){
+			let kwd = nextKwd.replace(/<.*?>/ig,"");
+			this.getData(kwd);
+		}
 	}
 	
 	//获取搜索结果
-	getData (data) {
-		console.log(data)
+	getData (kwd) {
 		this.setState({
-			data:data
+			isResult:true
+		});
+		let page = this.state.page;
+		const result = getSearchResult(kwd,page);
+		page++;
+		result.then(res => {
+			return res.json()
+		}).then(json => {
+			let data = json;
+			if(this.state.data.length){
+				data = this.state.data.concat(json);
+			}
+			this.setState({
+				data:data,
+				page,
+				isLoading:false
+			});
 		})
 	}
 	

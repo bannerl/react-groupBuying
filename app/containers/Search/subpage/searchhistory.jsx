@@ -22,7 +22,7 @@ class SearchHistory extends React.Component {
 			<div>
 			{
 				this.state.data.length
-				?<HistorySearch data={this.state.data} deleteHistory={this.deleteHistory.bind(this)}/>
+				?<HistorySearch router={this.props.router} data={this.state.data} deleteHistory={this.deleteHistory.bind(this)}/>
 				:""
 			}
 			<Message 

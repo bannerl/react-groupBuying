@@ -11,7 +11,8 @@ class SearchInputPage extends React.Component {
 		super(props,context);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 		this.state = {
-			value:''
+			value:'',
+			router:''
 		}
 	};
 	
@@ -38,7 +39,9 @@ class SearchInputPage extends React.Component {
 	
 	//返回
 	clickHandleReturn () {
-		window.history.back();
+		if(this.props.router === 'index') {
+			hashHistory.push('/')
+		}
 	}
 	//获取input值
 	getValue (val) {
@@ -80,7 +83,7 @@ class SearchInputPage extends React.Component {
 		
 		arr.push(value);
 		LocalStore.set('historySearch',arr);
-		hashHistory.push('/search/all/'+encodeURIComponent(value));
+		hashHistory.push('/search/all/'+this.props.router+'?kwd='+encodeURIComponent(value));
 	}
 }
 

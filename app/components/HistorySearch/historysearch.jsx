@@ -22,7 +22,7 @@ class HistorySearch extends React.Component {
 				<div class="history-item-wrapper clearfix">
 					{data.map((item,i) => {
 						return (
-							<Link to={"/search/all/"+encodeURIComponent(item)} class="history-item float-left" key={i}>{item}</Link>
+							<Link to={"/search/all/"+this.props.router+"?kwd="+encodeURIComponent(item)} class="history-item float-left" key={i}>{item}</Link>
 						)
 					})}
 				</div>

@@ -5,8 +5,9 @@ export function getHotSearch() {
     return result
 }
 
-export function getSearchResult(value) {
+export function getSearchResult(value,page) {
+	page = page || 0;
 	value = value || '';
-	const result = get('api/search?param='+value)
+	const result = get('api/search?param='+value+'&page='+page)
 	return result
 }
