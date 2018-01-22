@@ -7,7 +7,7 @@ import SearchHot from './subpage/searchhot';
 import SearchHistory from './subpage/searchhistory';
 import HomeFavoriteList from '../../components/HomeFavoriteList/homelist';
 import { getSearchResult } from '../../fetch/searchPage/searchpage';
-import ResultList from '../../components/ResultList/resultlist';
+import ShopList from '../../components/ShopList/ShopList';
 import LoadMore from '../../components/LoadMore/loadmore';
 
 class Search extends React.Component {
@@ -34,7 +34,7 @@ class Search extends React.Component {
 					this.state.isResult
 					?<div>
 						<ResultList data={this.state.data} />
-							<LoadMore 
+						<LoadMore 
 							isLoading={isLoading} 
 							hasMore={hasMore} 
 							loadMore={this.loadMore.bind(this)} 

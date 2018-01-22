@@ -65,6 +65,11 @@ router.get('/api/search',function (ctx,next){
 	ctx.body = FavoriteList.slice(2,8);
 });
 
+/*登录*/
+router.post('/api/login',function (ctx,next){
+	ctx.body = {state:'success'};
+});
+
 app.use(router.routes())
    .use(router.allowedMethods());
    

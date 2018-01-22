@@ -80,8 +80,9 @@ class SearchInputPage extends React.Component {
 			
 			arr = LocalStore.get('historySearch');
 		} 
-		
-		arr.push(value);
+		if(arr.indexOf(value) === -1) {
+			arr.push(value);
+		}
 		LocalStore.set('historySearch',arr);
 		hashHistory.push('/search/all/'+this.props.router+'?kwd='+encodeURIComponent(value));
 	}

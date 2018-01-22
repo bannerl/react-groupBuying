@@ -1,6 +1,6 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import { Link } from 'react-router';
+import { Link, hashHistory} from 'react-router';
 import './style.scss';
 
 class Home extends React.Component {
@@ -21,7 +21,11 @@ class Home extends React.Component {
 	};
 	
 	clickHandle () {
-		window.history.back();
+		if(this.props.backUrl) {
+			hashHistory.push(this.props.backUrl);
+		} else {
+			window.history.back();
+		}
 	}
 }
 

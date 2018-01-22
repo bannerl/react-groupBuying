@@ -37,7 +37,12 @@ class Message extends React.Component {
 					<div class="msg-body">{message.tips}</div>
 					<div class="msg-footer border-1px-top">
 						<div class="left" onClick={this.clickHandle.bind(this,true)}>确定</div>
-						<div class="right border-1px-left" onClick={this.clickHandle.bind(this,false)}>取消</div>
+						{
+							this.state.cancelButton
+							?<div class="right border-1px-left" onClick={this.clickHandle.bind(this,false)}>取消</div>
+							:''
+						}
+						
 					</div>
 				</div>
 			</div>	

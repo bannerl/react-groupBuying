@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import PropTypes from 'prop-types';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import './style.scss';
+import ListLoadBg from '../../components/ListLoadBg/listloadbg';
 
 class List extends React.Component {
 	constructor (props,context) {
@@ -38,9 +39,13 @@ class List extends React.Component {
 		
 		return (
 			<div>
-				<ul class="list-wrapper">
-					{dataContent}
-				</ul>
+				{
+					this.props.data.length
+					?<ul class="list-wrapper">
+						{dataContent}
+					</ul>
+					:<ListLoadBg count={6} />
+				}
 			</div>
 		)
 	}

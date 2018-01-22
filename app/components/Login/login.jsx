@@ -3,18 +3,22 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import { Link } from 'react-router';
 import './style.scss';
 import Input from '../InputBind/input';
+import { hashHistory } from 'react-router';
 
-class Home extends React.Component {
+class Login extends React.Component {
 	constructor(props,context) {
 		super(props,context);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 		this.state = {
-			active:false
+			active:false,
+			phone:'',
+			code:''
 		}
 	};
 	
 	render() {
 		const active = this.state.active;
+		
 		return (
 			<div class="login-wrapper">
 				<div class="content">
@@ -25,22 +29,29 @@ class Home extends React.Component {
 					<div class="code border-1px">
 						<Input getVal={this.getCode.bind(this)}  placeHolder="请输入验证码" />
 					</div>
-					<div class={"login-btn "+(active?'active':'')} onClick={this.clickHandle.bind(this)}>登陆</div>
+					<div class={"login-btn "+(active?'active':'')} onClick={this.clickHandle.bind(this)}>登录</div>
 				</div>
 			</div>
 		);
 	};
 	//获取输入的手机号
 	getPhone (val) {
-		console.log(val)
+		val = val||''
+		this.setState({
+			phone:val
+		})
+		
 	}
 	//获取输入的验证码
 	getCode (val) {
-		
+		val = val||''
+		this.setState({
+			code:val
+		})
 	}
 	//获取验证码
 	getOriginCode () {
-		
+		alert("获取成功");
 	}
 	//切换登陆按钮点击样式
 	clickHandle () {
@@ -51,9 +62,24 @@ class Home extends React.Component {
 			this.setState({
 				active:false
 			})
-		},100)
+		},100);
+		this.savaData()
+	}
+	//保存登录状态
+	savaData () {
+		const phone = this.state.phone;
+		const code = this.state.code;
+		//验证是否正确
+		if(/^1[0-9]{10}/.test(phone)){
+			this.props.getData(phone,code);
+		} else {
+			//alert('手机号填写错误');
+		}
+		this.props.getData(phone,code);
 	}
 	
 }
 
-export default Home;
+
+
+export default Login;

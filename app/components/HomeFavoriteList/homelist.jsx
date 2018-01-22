@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import PropTypes from 'prop-types';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import './style.scss';
+import ListLoadBg from '../ListLoadBg/listloadbg';
 
 class HomeFavoriteList extends React.Component {
 	constructor (props,context) {
@@ -32,9 +33,7 @@ class HomeFavoriteList extends React.Component {
 					</li>
 				</Link>)
 		})
-		:<div class="loading">
-			<img src='./image/homeAdBg.svg' />
-		</div>;
+		:<ListLoadBg count={6} />;
 		return (
 			<ul class="home-favo-wrapper" >
 				{dataContent}

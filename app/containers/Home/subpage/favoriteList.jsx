@@ -2,7 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { getFavoriteListData } from '../../../fetch/home/home';
-import HomeFavoriteList from '../../../components/HomeFavoriteList/homelist';
+//import HomeFavoriteList from '../../../components/HomeFavoriteList/homelist';
+import ShopList from '../../../components/ShopList/ShopList';
 import LoadMore from '../../../components/LoadMore/loadmore';
 import './style.scss'; 
 
@@ -22,8 +23,12 @@ class FavoriteList extends React.Component {
 		return (
 			<div>
 				<h3 class="home-favo-title border-1px">猜你喜欢</h3>
-				<HomeFavoriteList data={data} />
-				<LoadMore isLoading={isLoading} hasMore={hasMore} loadMore={this.loadMore.bind(this)} />
+				<ShopList data={data} />
+				{
+					data.length
+					?<LoadMore isLoading={isLoading} hasMore={hasMore} loadMore={this.loadMore.bind(this)} />
+					:''
+				}
 			</div>
 		)
 	}
@@ -39,7 +44,7 @@ class FavoriteList extends React.Component {
 			let result = getFavoriteListData(this.props.cityName,page);
 			setTimeout(() =>{
 				this.handlerResult(result,page);
-			},1200);
+			},900);
 			
 		}
 	}

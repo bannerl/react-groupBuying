@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
+import Header from '../../components/Header/header';
 
 class Name extends React.Component {
 	constructor (props,context) {
@@ -11,7 +12,10 @@ class Name extends React.Component {
 	}
 	render () {
 		return (
-			<div>用户中心</div>
+			<div>
+				<Header title="个人中心" backUrl="/" />
+				
+			</div>
 		)
 	}
 }
