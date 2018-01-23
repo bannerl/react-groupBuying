@@ -6,7 +6,7 @@ import { hashHistory } from 'react-router';
 import Abstract from '../../../components/DetailAbstract/abstract';
 import * as UserInfoActionFromFile from '../../../actions/store';
 import * as LocalStoreKey from '../../../config/localStoreKey';
-import LocalStores from '../../../util/localStore'; 
+import LocalStore from '../../../util/localStore'; 
 
 class Buy extends React.Component {
 	constructor(props,context) {
@@ -40,18 +40,12 @@ class Buy extends React.Component {
 		if(this.state.isLogin) {
 			if(this.state.isStore){
 				this.props.UserInfoActions.rm({id:this.props.id});
-				let arr = LocalStore.get(LocalStoreKey.SHOPSSTORE);
-				if(arr == null) {
-					
-				} else {
-					arr.forEach((item,i) => {
-						
-					});
-				}
-				LocalStore.set(LocalStoreKey.SHOPSSTORE,'')
+				//保存到本地仓库
+				this.savaStore('reduce')
 			} else {
 				this.props.UserInfoActions.add({id:this.props.id});
-				LocalStore.set(LocalStoreKey.SHOPSSTORE,{id:this.props.id})
+				//保存到本地仓库
+				this.savaStore('add')
 			}
 			this.setState({
 				isStore:!this.state.isStore
@@ -66,15 +60,39 @@ class Buy extends React.Component {
 		
 	}
 	
+	//存到本地
+	savaStore(param) {
+		const id = this.props.id;
+		let arr = LocalStore.get(LocalStoreKey.SHOPSSTORE);
+		if(arr == null){
+			arr = [];
+			if(param === "add") {
+				arr.push({id});
+			}
+		}else{
+			if(param === "add") {
+				arr.unshift({id});
+			}else{
+				arr.filter((item) => {
+					if(id !== item.id){
+						return item
+					}
+				})
+			}
+		}
+		LocalStore.set(LocalStoreKey.SHOPSSTORE,arr);
+	}
+	
 	componentDidMount () {
 		//检验是否登录
 		const isLogin = this.checkLogin()
 		if(isLogin) {
 			const store = this.props.store
 			if(store) {
-				const isStore = store.some((item) => {
+				let isStore = store.some((item) => {
 					return (this.props.id == item.id)
 				});
+				
 				this.setState({
 					isStore
 				})

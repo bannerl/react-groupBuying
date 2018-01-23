@@ -7,6 +7,7 @@ import * as actionTypes from '../constants/store'
 import * as UserInfoActionsFromOtherFile from '../actions/userinfo'
 import * as LocalStoreKey from '../config/localStoreKey'
 import LocalStore from '../util/localStore'
+import * as StoreActionsFromFile from '../actions/store';
 
 class Index extends React.Component {
 	constructor (props,context) {
@@ -43,9 +44,10 @@ class Index extends React.Component {
 		
 		this.props.userInfoActions.update({
 			cityName,
-			userName,
-			store
+			userName
 		});
+		console.log(this.props.storeActions)
+		this.props.storeActions.update(store);
 		this.setState({
 			initPage:true
 		})
@@ -58,7 +60,8 @@ function mapStateToProps () {
 
 function mapDispatchToProps (dispatch) {
 	return {
-		userInfoActions: bindActionCreators(UserInfoActionsFromOtherFile,dispatch)
+		userInfoActions: bindActionCreators(UserInfoActionsFromOtherFile,dispatch),
+		storeActions: bindActionCreators(StoreActionsFromFile,dispatch)
 	}
 }
 
