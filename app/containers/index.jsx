@@ -30,16 +30,21 @@ class Index extends React.Component {
 	componentDidMount () {
 		let cityName = LocalStore.getItem(LocalStoreKey.CITYNAME);
 		let userName = LocalStore.getItem(LocalStoreKey.USERNAME);
+		let store = LocalStore.get(LocalStoreKey.SHOPSSTORE);
 		if(cityName == null) {
 			cityName = '杭州';
 		}
 		if(userName == null) {
 			userName = '';
 		}
+		if(store == null) {
+			store = '';
+		}
 		
 		this.props.userInfoActions.update({
-			cityName:cityName,
-			userName:userName
+			cityName,
+			userName,
+			store
 		});
 		this.setState({
 			initPage:true

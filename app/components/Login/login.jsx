@@ -36,18 +36,20 @@ class Login extends React.Component {
 	};
 	//获取输入的手机号
 	getPhone (val) {
-		val = val||''
-		this.setState({
-			phone:val
-		})
+		if(val) {
+			this.setState({
+				phone:val
+			})
+		}
 		
 	}
 	//获取输入的验证码
 	getCode (val) {
-		val = val||''
-		this.setState({
-			code:val
-		})
+		if(val) {
+			this.setState({
+				code:val
+			})
+		}
 	}
 	//获取验证码
 	getOriginCode () {
@@ -59,9 +61,11 @@ class Login extends React.Component {
 			active:true
 		})
 		setTimeout(()=>{
-			this.setState({
-				active:false
-			})
+//			if(this.state) {
+//				this.setState({
+//					active:false
+//				})
+//			}
 		},100);
 		this.savaData()
 	}

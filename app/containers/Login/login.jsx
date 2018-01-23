@@ -8,6 +8,7 @@ import Header from '../../components/Header/header';
 import LoginComponent from '../../components/Login/login';
 import { LoginIn } from '../../fetch/login/login';
 import LocalStore from '../../util/localStore';
+import * as LocalStoreKey from '../../config/localStoreKey';
 
 class Login extends React.Component {
 	constructor (props,context) {
@@ -28,7 +29,7 @@ class Login extends React.Component {
 	
 	componentDidMount () {
 		const userName = this.props.userInfos.userName;
-		const localUserName = LocalStore.getItem('userName');
+		const localUserName = LocalStore.getItem(LocalStoreKey.USERNAME);
 		if(userName !== ''||localUserName) {
 			this.goUserPage()
 		}
@@ -48,7 +49,7 @@ class Login extends React.Component {
 			if(json.state === 'success') {
 				let obj = this.props.userInfos;
 				obj.userName = params.phone;
-				LocalStore.setItem('userName',params.phone);
+				LocalStore.setItem(LocalStoreKey.USERNAME,params.phone);
 				this.props.InfoActions.update(obj);
 				this.goUserPage()
 			}
@@ -57,11 +58,21 @@ class Login extends React.Component {
 	
 	// 跳转用户页面
 	goUserPage () {
-		const router = this.props.params.router;
-		if(router) {
-			hashHistory.push('/'+router);
+		let router = this.props.location.pathname;
+		router = router.replace('/login/','');
+		if(router&&this.props.params.router) {
+			const query = this.props.location.query;
+			if(query){
+				let str = '';
+				for(let k in query){
+					str = '?'+k+'='+query[k];
+				}
+				hashHistory.replace('/'+router+str);
+			} else {
+				hashHistory.replace('/'+router);
+			}
 		} else {
-			hashHistory.push('/user');
+			hashHistory.replace('/user');
 		}
 	}
 }

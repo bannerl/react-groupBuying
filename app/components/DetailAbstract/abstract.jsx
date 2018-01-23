@@ -3,15 +3,20 @@ import { render } from 'react-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import classNames from 'classnames';
 import './style.scss';
 
-class Name extends React.Component {
+class Abstract extends React.Component {
 	constructor (props,context) {
 		super(props,context);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
 	render () {
 		const data = this.props.data;
+		const styles = classNames('iconfont',{
+			'icon-star':!this.props.isStore,
+			'icon-star-full':this.props.isStore
+		});
 		return (
 			<div class="detail-abstract">
 				<div class="image-wrapper">
@@ -23,26 +28,23 @@ class Name extends React.Component {
 				</div>
 				<div class="price-wrapper border-1px">
 					<span class="float-left price">{data.price}</span>
-					<span class="float-right btn btn-buy">立即抢购</span>
+					<span class="float-right btn btn-buy" onClick={this.buyClickHandle.bind(this)}>立即抢购</span>
+					<span class="float-right collections" onClick={this.collectionHandle.bind(this)}>
+						<i class={styles}></i>
+					</span>
 				</div>
 			</div>
 		)
 	}
-}
-
-function mapStateToProps () {
-	return {
-		
+	//点击收藏按钮
+	collectionHandle () {
+		this.props.collectionHandle()
+	}
+	//点击购买按钮
+	buyClickHandle () {
+		this.props.buyClickHandle()
 	}
 }
 
-function mapDispatchToProps () {
-	return {}
-}
-
-const Abstract = connect (
-	mapStateToProps,
-	mapDispatchToProps
-)(Name)
 
 export default Abstract;
