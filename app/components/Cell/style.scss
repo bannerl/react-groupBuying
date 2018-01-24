@@ -1,0 +1,36 @@
+.cell-wrapper{
+    padding: .14rem 0 .14rem 0;
+    margin-left: .14rem;
+    background: #fff;
+    .cell-content{
+        display: flex;
+        padding-right: .14rem;
+        align-items: center;
+    }
+    .cell-left{
+        .iconfont{
+            font-size: .22rem;
+            padding: 0 .06rem 0 0;
+            color: #1890FF;
+        }
+    }
+    .cell-center{
+        font-size: .16rem;
+        color: #333;
+        flex: 1;
+    }
+    .cell-right{
+        display: flex;
+        align-items: center;
+        .text{
+            font-size: .16rem;
+            color: #999;
+        }
+        .iconfont {
+            margin-left: .06rem;
+            font-weight: bold;
+            font-size: .15rem;
+            color: #ddd;
+        }
+    }
+}

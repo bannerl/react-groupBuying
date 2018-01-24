@@ -70,6 +70,16 @@ router.post('/api/login',function (ctx,next){
 	ctx.body = {state:'success'};
 });
 
+/*订单*/
+router.get('/api/user/orders',function(ctx,next) {
+	ctx.body = FavoriteList.slice(3,7);
+});
+
+/*订单*/
+router.get('/api/user/collection',function(ctx,next) {
+	ctx.body = FavoriteList;
+});
+
 app.use(router.routes())
    .use(router.allowedMethods());
    

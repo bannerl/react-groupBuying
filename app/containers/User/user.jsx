@@ -1,40 +1,40 @@
 import React from 'react';
-import { render } from 'react-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import Header from '../../components/Header/header';
+import UserSummary from '../../components/UserSummary/userSummary';
+import Cell from '../../components/Cell/cell';
 
-class Name extends React.Component {
+class User extends React.Component {
 	constructor (props,context) {
 		super(props,context);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 	}
 	render () {
 		return (
-			<div>
-				<Header title="个人中心" backUrl="/" />
-				
+			<div class="user-wrapper">
+				<UserSummary backUrl="/" to="/userDetail" cityName={this.props.userInfos.cityName} userName={this.props.userInfos.userName} />
+				<Cell title="我的订单" to="/orders" icon="icon-activity_fill"/>
+				<Cell title="我的收藏" to="/collections" icon="icon-collection_fill" iconColor="#ff3131" />
 			</div>
 		)
 	}
 }
 
-function mapStateToProps () {
+function mapStateToProps (state) {
 	return {
-		
+		userInfos: state.userinfo,
+		store: state.store
 	}
 }
 
 function mapDispatchToProps () {
-	return {
-		
-	}
+	return {}
 }
 
-const Names = connect (
+const UserContainer = connect (
 	mapStateToProps,
 	mapDispatchToProps
-)(Name)
+)(User)
 
-export default Names;
+export default UserContainer;

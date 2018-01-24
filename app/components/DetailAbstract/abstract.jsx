@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import classNames from 'classnames';
+import Button from '../Button/button';
+
 import './style.scss';
 
 class Abstract extends React.Component {
@@ -28,9 +30,19 @@ class Abstract extends React.Component {
 				</div>
 				<div class="price-wrapper border-1px">
 					<span class="float-left price">{data.price}</span>
-					<span class="float-right btn btn-buy" onClick={this.buyClickHandle.bind(this)}>立即抢购</span>
-					<span class="float-right collections" onClick={this.collectionHandle.bind(this)}>
-						<i class={styles}></i>
+					<div class="float-right">
+						<Button type="warning" size="small" title="立即抢购" clickHandle={this.buyClickHandle.bind(this)} />
+					</div>
+					<div  class="float-right">
+						<Button type="danger" icon="icon-star" size="small" title="收藏" clickHandle={this.collectionHandle.bind(this)} />
+					</div>
+
+					
+
+					<span class="float-right collections btn btn-collection" onClick={this.collectionHandle.bind(this)}>
+						{
+							this.props.isStore?'已收藏':'收藏'
+						}<i class={styles}></i>
 					</span>
 				</div>
 			</div>

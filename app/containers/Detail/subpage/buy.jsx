@@ -57,7 +57,12 @@ class Buy extends React.Component {
 	
 	//购买
 	buyClickHandle () {
-		
+		const boo = this.checkLogin();
+		if(boo){
+			//跳转购买页面
+		}else{
+			this.goLogin();
+		}
 	}
 	
 	//存到本地
@@ -71,13 +76,19 @@ class Buy extends React.Component {
 			}
 		}else{
 			if(param === "add") {
-				arr.unshift({id});
+				const boo = arr.some((item) => {
+					return (item.id === id)
+				})
+				if(!boo){
+					arr.unshift({id});
+				}
 			}else{
-				arr.filter((item) => {
-					if(id !== item.id){
+				let _arr = arr.filter((item) => {
+					if(item.id !== id){
 						return item
 					}
-				})
+				});
+				arr = _arr
 			}
 		}
 		LocalStore.set(LocalStoreKey.SHOPSSTORE,arr);

@@ -10,6 +10,9 @@ import Search from '../containers/Search/search';
 import User from '../containers/User/user';
 import Login from '../containers/Login/login';
 import ShopsType from '../containers/ShopsType/shopstype';
+import UserOrder from '../containers/UserOrder/userOrder';
+import Collections from '../containers/Collections/collections';
+import UserDetail from '../containers/UserDetail/userDetail';
 
 class RouterMap extends React.Component {
 	render () {
@@ -23,6 +26,9 @@ class RouterMap extends React.Component {
 					<Route path='/search/:type(/:router)' component={Search} />
 					<Route path='/user' component={User} />
 					<Route path='/login(/:router)(/:id)' component={Login} />
+					<Route path='/orders' component={UserOrder} />
+					<Route path='/collections' component={Collections} />
+					<Route path='/userDetail' component={UserDetail} />
 					
 					<Route path='*' component={NotFound} />
 				</Route>

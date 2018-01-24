@@ -39,14 +39,13 @@ class Index extends React.Component {
 			userName = '';
 		}
 		if(store == null) {
-			store = '';
+			store = [];
 		}
 		
 		this.props.userInfoActions.update({
 			cityName,
 			userName
 		});
-		console.log(this.props.storeActions)
 		this.props.storeActions.update(store);
 		this.setState({
 			initPage:true

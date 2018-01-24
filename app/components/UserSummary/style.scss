@@ -1,0 +1,64 @@
+.user-summary-wrapper{
+    position: relative;
+    height: 1.8rem;
+    overflow: hidden;
+    .return {
+        display: flex;
+        align-items: center;
+        padding: .14rem .12rem;
+        .iconfont{
+            position: absolute;
+            padding: .16rem .12rem;
+            left: 0;
+            top: 0;
+            color: #fff;
+            font-size: .16rem;
+        }
+        .title{
+            flex: 1;
+            text-align: center;
+            color: #fff;
+            font-size: .16rem;
+        }
+    }
+    .bg{
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .user-summary{
+        margin-top: .14rem;
+        display: flex;
+        align-items: center;
+        padding:0 .14rem;
+        height: 1rem;
+        width: 100%;
+    }
+    .avatar{
+        
+    }
+    .content {
+        flex: 1;
+        margin-left: .16rem;
+        .userName {
+            margin: 0 0 .08rem;
+            color: #fff;
+            font-size: .18rem;
+            font-weight: bold;
+        }
+        .userCity{
+            font-size: .14rem;
+            color: #fff;
+        }
+    }
+    .arrow {
+        padding-left:.14rem;
+        .iconfont {
+            font-size: .18rem;
+            font-weight: 700;
+            color: #fff;
+        }
+    }
+}

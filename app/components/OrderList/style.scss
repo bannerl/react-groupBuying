@@ -1,0 +1,25 @@
+@charset "utf-8";
+.orderList-wrapper {
+    &.list-item {
+        .list-description{
+            height: auto;
+            padding: .06rem 0;
+            display: block;
+            -webkit-box-orient:inherit;
+        }
+    }
+}
+
+.order-wrapper {
+    .operation-wrapper {
+        padding: .10rem .14rem;
+        text-align: right;
+        .btn{
+            margin-left: .1rem;
+            font-size: .16rem;
+            padding: .06rem .14rem;
+            height: auto;
+            line-height: 1;
+        }
+    }
+}

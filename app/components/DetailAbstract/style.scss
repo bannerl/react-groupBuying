@@ -48,15 +48,21 @@
             }
         }
         .btn-buy {
-            background: #f90;
+            background: #FF3333;
         }
         .collections {
-            margin-top: .02rem;
+            margin-right: .08rem;
+            text-align: center;
             .iconfont {
-                color: #FF3333;
-                font-size: .24rem;
-                margin-right: .16rem;
+                color: #fff;
+                font-size: .18rem;
+                vertical-align: top;
+                margin-left: .04rem;
             }
+        }
+        .btn-collection{
+            vertical-align: top;
+            background:  #f90;
         }
     }
 }
