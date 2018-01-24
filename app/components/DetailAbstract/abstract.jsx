@@ -31,19 +31,14 @@ class Abstract extends React.Component {
 				<div class="price-wrapper border-1px">
 					<span class="float-left price">{data.price}</span>
 					<div class="float-right">
-						<Button type="warning" size="small" title="立即抢购" clickHandle={this.buyClickHandle.bind(this)} />
+						<Button type="danger" size="small" title="立即抢购" clickHandle={this.buyClickHandle.bind(this)} />
 					</div>
-					<div  class="float-right">
-						<Button type="danger" icon="icon-star" size="small" title="收藏" clickHandle={this.collectionHandle.bind(this)} />
+					<div  class="float-right collection">
+						<Button type="warning"  size="small"
+							icon={this.props.isStore?'icon-star-full':"icon-star"} 
+							title={this.props.isStore?'已收藏':"收藏"} 
+							clickHandle={this.collectionHandle.bind(this)} />
 					</div>
-
-					
-
-					<span class="float-right collections btn btn-collection" onClick={this.collectionHandle.bind(this)}>
-						{
-							this.props.isStore?'已收藏':'收藏'
-						}<i class={styles}></i>
-					</span>
 				</div>
 			</div>
 		)

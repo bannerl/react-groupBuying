@@ -7,6 +7,7 @@ import Carousel from '../../components/Carousel/carousel';
 import ListAd from './subpage/listAd';
 import FavoriteList from './subpage/favoriteList';
 import * as UserInfoActions from '../../actions/userinfo';
+import {getVersions} from '../../util/util';
 
 class Home extends React.Component {
 	constructor (props,context) {
@@ -25,6 +26,35 @@ class Home extends React.Component {
 				<FavoriteList cityName={cityName} />
 			</div>
 		)
+	}
+	componentDidMount() {
+		var body = document.getElementsByTagName('body')[0];
+		document.onscroll = (e) => {
+			var scrollTop = body.scrollTop || document.documentElement.scrollTop;
+			if(scrollTop === 0){
+				body.style.overflow='hidden';
+				if(moveY-startY>=0){
+					e.preventDefault();
+				}
+			}
+		}
+//			var startY = 0;
+//			body.ontouchstart = (e) => {
+//				startY = e.touches[0].pageY;
+//				e.preventDefault();
+//			}
+//			
+//			body.ontouchmove = (e) => {
+//				var moveY = e.changedTouches[0].pageY;
+//				var scrollTop = body.scrollTop || document.documentElement.scrollTop;
+//				if(scrollTop === 0){
+//					body.style.overflow='hidden';
+//					if(moveY-startY>=0){
+//						e.preventDefault();
+//					}
+//				}
+//				
+//			}
 	}
 }
 

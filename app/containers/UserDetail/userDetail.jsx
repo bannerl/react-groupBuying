@@ -23,7 +23,9 @@ class UserDetail extends React.Component {
 					<Cell title={this.props.userInfos.userName} icon="icon-user-little" to="/editWord" value="修改"/>
 					<Cell title='修改密码' icon="icon-lock_fill" to="/editPassword" />
 				</div>
-				<Button title="退出登录" style="" clickHandle={this.clickHandle.bind(this)} />
+				<div class="loginOut-content">
+					<Button title="退出登录" type="warning" size="large" clickHandle={this.clickHandle.bind(this)} />
+				</div>
 			</div>
 		)
 	}

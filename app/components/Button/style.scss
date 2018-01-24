@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 .btn {
+    -webkit-tap-highlight-color:none;
     appearance: none;
     border-radius: .04rem;
     border: 0;
@@ -13,6 +14,20 @@
     overflow: hidden;
     position: relative;
     text-align: center;
+    cursor: pointer;
+    &:after{
+        background-color: #000;
+        content: " ";
+        opacity: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+    }   
+    &:not(.is-disabled):active:after{
+       opacity: .3; 
+    } 
     .iconfont{
         margin-right:.04rem;
     }
@@ -56,6 +71,7 @@
     }
     &.is-disabled {
         opacity: .6;
+        cursor: default;
     }
     &.btn-button-large {
         display: block;
