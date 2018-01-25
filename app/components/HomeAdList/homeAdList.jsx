@@ -50,7 +50,7 @@ class HomeAdList extends React.Component {
 }
 
 HomeAdList.propTypes = {
-    data: React.PropTypes.array
+    data: PropTypes.array
 }
 
 export default HomeAdList;

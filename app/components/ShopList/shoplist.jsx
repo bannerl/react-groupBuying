@@ -52,7 +52,7 @@ class List extends React.Component {
 }
 
 List.propTypes = {
-    data: React.PropTypes.array
+    data: PropTypes.array
 }
 
 export default List;

@@ -43,7 +43,7 @@ class HomeFavoriteList extends React.Component {
 }
 
 HomeFavoriteList.propTypes = {
-    data: React.PropTypes.array
+    data: PropTypes.array
 }
 
 export default HomeFavoriteList;

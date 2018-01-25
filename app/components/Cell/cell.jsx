@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import './style.scss';
 
-class ListItem extends React.Component {
+class Cell extends React.Component {
 	constructor (props,context) {
 		super(props,context);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
@@ -59,12 +59,12 @@ class ListItem extends React.Component {
 	
 }
 
-ListItem.propTypes = {
-	title: React.PropTypes.string.isRequired,
-	value: React.PropTypes.string,
-	icon: React.PropTypes.string,
-	to: React.PropTypes.string,
-	clickHandle: React.PropTypes.func
+Cell.propTypes = {
+	title: PropTypes.string.isRequired,
+	value: PropTypes.string,
+	icon: PropTypes.string,
+	to: PropTypes.string,
+	clickHandle: PropTypes.func
 }
 
-export default ListItem;
+export default Cell;

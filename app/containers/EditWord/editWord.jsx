@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import propTypes from 'prop-types';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin'

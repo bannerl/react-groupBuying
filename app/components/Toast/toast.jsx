@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import './style.scss';
 
@@ -29,10 +29,10 @@ class Toast extends React.Component {
 }
 
 Toast.propTypes = {
-	message: React.PropTypes.string.isRequired,
-	icon: React.PropTypes.string,
-	position: React.PropTypes.string,
-	duration: React.PropTypes.number
+	message: PropTypes.string.isRequired,
+	icon: PropTypes.string,
+	position: PropTypes.string,
+	duration: PropTypes.number
 }
 
 export default Toast;

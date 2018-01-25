@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import './style.scss';
 
@@ -52,9 +52,9 @@ class Button extends React.Component {
 	}
 }
 Button.propTypes = {
-	icon:React.PropTypes.string,
-	title:React.PropTypes.string.isRequired,
-	classnames:React.PropTypes.string,
-	clickHandle:React.PropTypes.func
+	icon:PropTypes.string,
+	title:PropTypes.string.isRequired,
+	classnames:PropTypes.string,
+	clickHandle:PropTypes.func
 }
 export default Button;

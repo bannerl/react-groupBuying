@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import './style.scss';
 
@@ -86,11 +86,11 @@ class Input extends React.Component {
 	 * 父组件可通过getVal获取输入框值
 	*/
 Input.propTypes = {
-	KeyUpHandle: React.PropTypes.func,
-	getVal: React.PropTypes.func,
-	val: React.PropTypes.string,
-	placeHolder: React.PropTypes.string,
-	IsFocus: React.PropTypes.bool
+	KeyUpHandle: PropTypes.func,
+	getVal: PropTypes.func,
+	val: PropTypes.string,
+	placeHolder: PropTypes.string,
+	IsFocus: PropTypes.bool
 }
 
 export default Input;
