@@ -3,9 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import Header from '../../components/Header/header';
-import Cell from '../../components/Cell/cell';
-import './subpage/style.scss';
 import Button from '../../components/Button/button';
+import EditAcount from './subpage/editAcount';
 
 class UserDetail extends React.Component {
 	constructor (props,context) {
@@ -19,10 +18,7 @@ class UserDetail extends React.Component {
 		return (
 			<div class="userDetail-wrapper">
 				<Header title="我的账户" />
-				<div class="userDetail-content">
-					<Cell title={this.props.userInfos.userName} icon="icon-user-little" to="/editWord" value="修改"/>
-					<Cell title='修改密码' icon="icon-lock_fill" to="/editPassword" />
-				</div>
+				<EditAcount userInfos={this.props.userInfos} />
 				<div class="loginOut-content">
 					<Button title="退出登录" type="warning" size="large" clickHandle={this.clickHandle.bind(this)} />
 				</div>
@@ -30,6 +26,7 @@ class UserDetail extends React.Component {
 		)
 	}
 	
+	//退出登录
 	clickHandle() {
 		
 	}

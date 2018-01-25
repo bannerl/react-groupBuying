@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import './style.scss';
 
-class Message extends React.Component {
+class ListloadBg extends React.Component {
 	constructor (props,context) {
 		super(props,context);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
@@ -29,5 +29,5 @@ class Message extends React.Component {
 	}
 }
 
-export default Message;
+export default ListloadBg;
 

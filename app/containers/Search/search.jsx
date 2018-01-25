@@ -33,7 +33,7 @@ class Search extends React.Component {
 				{
 					this.state.isResult
 					?<div>
-						<ResultList data={this.state.data} />
+						<ShopList data={this.state.data} />
 						<LoadMore 
 							isLoading={isLoading} 
 							hasMore={hasMore} 

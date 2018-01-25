@@ -24,7 +24,9 @@ class Button extends React.Component {
 		)
 	}
 	clickHandle() {
-		this.props.clickHandle()
+		if(this.props.clickHandle){
+			this.props.clickHandle()
+		}
 	}
 	
 	componentDidMount() {
@@ -53,6 +55,6 @@ Button.propTypes = {
 	icon:React.PropTypes.string,
 	title:React.PropTypes.string.isRequired,
 	classnames:React.PropTypes.string,
-	clickHandle:React.PropTypes.func.isRequired
+	clickHandle:React.PropTypes.func
 }
 export default Button;

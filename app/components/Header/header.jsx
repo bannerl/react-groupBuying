@@ -3,7 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import { Link, hashHistory} from 'react-router';
 import './style.scss';
 
-class Home extends React.Component {
+class Header extends React.Component {
 	constructor(props,context) {
 		super(props,context);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
@@ -29,4 +29,4 @@ class Home extends React.Component {
 	}
 }
 
-export default Home;
+export default Header;

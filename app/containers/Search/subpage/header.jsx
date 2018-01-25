@@ -26,7 +26,7 @@ class SearchInputPage extends React.Component {
 					<InputBind 
 						keyUpHandle={this.KeyUpHandle.bind(this)} 
 						getVal={this.getValue.bind(this)}
-						IsFocus="true" 
+						IsFocus 
 						placeHolder="请输入关键字"
 					/>
 				</div>

@@ -7,7 +7,7 @@ import Carousel from '../../components/Carousel/carousel';
 import ListAd from './subpage/listAd';
 import FavoriteList from './subpage/favoriteList';
 import * as UserInfoActions from '../../actions/userinfo';
-import {getVersions} from '../../util/util';
+import {PreventScroll} from '../../util/util';
 
 class Home extends React.Component {
 	constructor (props,context) {
@@ -19,6 +19,7 @@ class Home extends React.Component {
 		return (
 			<div>
 				<HomeHeader cityName={cityName}/>
+
 				<Carousel />
 				<div style={{"height":".13rem","background":'#f5f5f5'}}></div>
 				<ListAd />
@@ -30,13 +31,13 @@ class Home extends React.Component {
 	componentDidMount() {
 		var body = document.getElementsByTagName('body')[0];
 		document.onscroll = (e) => {
-			var scrollTop = body.scrollTop || document.documentElement.scrollTop;
-			if(scrollTop === 0){
-				body.style.overflow='hidden';
-				if(moveY-startY>=0){
-					e.preventDefault();
-				}
-			}
+			//var scrollTop = body.scrollTop || document.documentElement.scrollTop;
+//			if(scrollTop === 0){
+//				body.style.overflow='hidden';
+//				if(moveY-startY>=0){
+//					e.preventDefault();
+//				}
+//			}
 		}
 //			var startY = 0;
 //			body.ontouchstart = (e) => {

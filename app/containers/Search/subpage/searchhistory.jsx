@@ -3,6 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import HistorySearch from '../../../components/HistorySearch/historysearch';
 import LocalStore from '../../../util/localStore';
 import Message from '../../../components/Message/message';
+import Dialog from '../../../components/Dialog/dialog';
 
 class SearchHistory extends React.Component {
 	constructor (props,context) {
@@ -20,15 +21,17 @@ class SearchHistory extends React.Component {
 		
 		return (
 			<div>
-			{
-				this.state.data.length
-				?<HistorySearch router={this.props.router} data={this.state.data} deleteHistory={this.deleteHistory.bind(this)}/>
-				:""
-			}
-			<Message 
-				messageShow={this.state.isShowMessage} 
-				message={this.state.message} 
-				messageResult={this.messageResult.bind(this)} />
+				{
+					this.state.data.length
+					?<HistorySearch router={this.props.router} data={this.state.data} deleteHistory={this.deleteHistory.bind(this)}/>
+					:""
+				}
+				<Dialog>
+					<Message 
+						messageShow={this.state.isShowMessage} 
+						message={this.state.message} 
+						messageResult={this.messageResult.bind(this)} />
+				</Dialog>
 			</div>
 		)
 	}

@@ -13,6 +13,8 @@ import ShopsType from '../containers/ShopsType/shopstype';
 import UserOrder from '../containers/UserOrder/userOrder';
 import Collections from '../containers/Collections/collections';
 import UserDetail from '../containers/UserDetail/userDetail';
+import EditWord from '../containers/EditWord/editWord';
+import EditPassword from '../containers/EditPassword/editPassword';
 
 class RouterMap extends React.Component {
 	render () {
@@ -29,6 +31,8 @@ class RouterMap extends React.Component {
 					<Route path='/orders' component={UserOrder} />
 					<Route path='/collections' component={Collections} />
 					<Route path='/userDetail' component={UserDetail} />
+					<Route path='/editWord' component={EditWord} />
+					<Route path='/editPassword' component={EditPassword} />
 					
 					<Route path='*' component={NotFound} />
 				</Route>

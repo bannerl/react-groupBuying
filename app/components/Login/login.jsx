@@ -4,6 +4,8 @@ import { Link } from 'react-router';
 import './style.scss';
 import Input from '../InputBind/input';
 import { hashHistory } from 'react-router';
+import Dialog from '../Dialog/dialog';
+import Toast from '../Toast/toast';
 
 class Login extends React.Component {
 	constructor(props,context) {
@@ -12,7 +14,8 @@ class Login extends React.Component {
 		this.state = {
 			active:false,
 			phone:'',
-			code:''
+			code:'',
+			visible:false
 		}
 	};
 	
@@ -31,6 +34,11 @@ class Login extends React.Component {
 					</div>
 					<div class={"login-btn "+(active?'active':'')} onClick={this.clickHandle.bind(this)}>登录</div>
 				</div>
+				<Dialog class="fade">
+					<Toast visible={this.state.visible}
+						message="密码错误"
+					/>
+				</Dialog>
 			</div>
 		);
 	};
@@ -41,7 +49,6 @@ class Login extends React.Component {
 				phone:val
 			})
 		}
-		
 	}
 	//获取输入的验证码
 	getCode (val) {
@@ -53,7 +60,7 @@ class Login extends React.Component {
 	}
 	//获取验证码
 	getOriginCode () {
-		alert("获取成功");
+		
 	}
 	//切换登陆按钮点击样式
 	clickHandle () {

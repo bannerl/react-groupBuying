@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
+import propTypes from 'prop-types';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import './style.scss';
 
-class SearchInput extends React.Component {
+class Input extends React.Component {
 	constructor (props,context) {
 		super(props,context);
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
@@ -30,13 +31,6 @@ class SearchInput extends React.Component {
 		)
 	}
 	
-	/*
-	 * 提供传入参数
-	 * placeHolder 提示显示
-	 * IsIsFocus 页面加载是否获取焦点
-	 * keyUpHandle 键盘事件
-	*/
-	
 	//清空数据
 	deleteText () {
 		this.setState({
@@ -44,6 +38,7 @@ class SearchInput extends React.Component {
 			closeState:false
 		});
 		this.refs.value.focus();
+		this.props.getVal('');
 	}
 	
 	//绑定输入数据
@@ -75,8 +70,27 @@ class SearchInput extends React.Component {
 		if(this.props.IsFocus) {
 			this.refs.value.focus();
 		}
+		if(this.props.value){
+			this.setState({
+				value:this.props.value
+			})
+		}
 	}
 }
 
+	/*
+	 * 提供传入参数
+	 * placeHolder 提示显示
+	 * IsFocus 页面加载是否获取焦点
+	 * 父组件可通过keyUpHandle获取键盘事件
+	 * 父组件可通过getVal获取输入框值
+	*/
+Input.propTypes = {
+	KeyUpHandle: React.PropTypes.func,
+	getVal: React.PropTypes.func,
+	val: React.PropTypes.string,
+	placeHolder: React.PropTypes.string,
+	IsFocus: React.PropTypes.bool
+}
 
-export default SearchInput;
+export default Input;
