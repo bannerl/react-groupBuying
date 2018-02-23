@@ -15,7 +15,7 @@ class Login extends React.Component {
 			active:false,
 			phone:'',
 			code:'',
-			visible:false,
+			tipText:''
 		}
 	};
 	
@@ -34,10 +34,8 @@ class Login extends React.Component {
 					</div>
 					<div class={"login-btn "+(active?'active':'')} onClick={this.clickHandle.bind(this)}>登录</div>
 				</div>
-				<Dialog visible={this.state.visible}>
-					<Toast visible={this.state.visible}
-						message="密码错误"
-					/>
+				<Dialog>
+					<Toast duration={1000} message={this.state.tipText}/>
 				</Dialog>
 			</div>
 		);
@@ -46,9 +44,10 @@ class Login extends React.Component {
 	getPhone (val) {
 		if(val) {
 			this.setState({
-				phone:val
+				phone:val,
 			})
 		}
+		
 	}
 	//获取输入的验证码
 	getCode (val) {
@@ -58,11 +57,14 @@ class Login extends React.Component {
 			})
 		}
 	}
+	
 	//获取验证码
 	getOriginCode () {
 		this.setState({
-			visible:true
-		})
+			tipText:'1234'
+		});
+		
+		
 	}
 	//切换登陆按钮点击样式
 	clickHandle () {
@@ -70,13 +72,12 @@ class Login extends React.Component {
 			active:true
 		})
 		setTimeout(()=>{
-//			if(this.state) {
-//				this.setState({
-//					active:false
-//				})
-//			}
+			this.setState({
+				active:false
+			});
+			this.savaData();	
 		},100);
-		this.savaData()
+		
 	}
 	//保存登录状态
 	savaData () {
@@ -86,9 +87,11 @@ class Login extends React.Component {
 		if(/^1[0-9]{10}/.test(phone)){
 			this.props.getData(phone,code);
 		} else {
-			//alert('手机号填写错误');
+			this.setState({
+				tipText:'手机号输入错误'
+			});
 		}
-		this.props.getData(phone,code);
+		//this.props.getData(phone,code);
 	}
 	
 }

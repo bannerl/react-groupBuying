@@ -9,23 +9,35 @@ class Toast extends React.Component {
 		this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
 		this.state = {
 			position:'middle',
-			duration:3000
+			duration:3000,
+			visible:false
 		};
 	}
 	render () {
-		let { message, icon, position, duration, show} = this.props;
+		let { message, icon, position, duration, visible} = this.props;
 		
 		position = position?position:this.state.position;
 		duration = duration?duration:this.state.duration;
 		
 		return (
-			<div class={'toast-wrapper '+(show?'on':'')} >
+			<div class={'toast-wrapper '+(this.state.visible?'on':'')} >
 				{this.props.children}
 				<div class="content">
 					<span>{message}</span>
 				</div>
 			</div>
 		)
+	}
+	
+	componentWillReceiveProps(e){
+		this.setState({
+			visible:true
+		});
+		setTimeout(() => {
+			this.setState({
+				visible:false
+			})
+		},e.duration)
 	}
 }
 
