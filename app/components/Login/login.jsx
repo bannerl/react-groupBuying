@@ -15,7 +15,7 @@ class Login extends React.Component {
 			active:false,
 			phone:'',
 			code:'',
-			visible:false
+			visible:false,
 		}
 	};
 	
@@ -34,7 +34,7 @@ class Login extends React.Component {
 					</div>
 					<div class={"login-btn "+(active?'active':'')} onClick={this.clickHandle.bind(this)}>登录</div>
 				</div>
-				<Dialog class="fade">
+				<Dialog visible={this.state.visible}>
 					<Toast visible={this.state.visible}
 						message="密码错误"
 					/>
@@ -60,7 +60,9 @@ class Login extends React.Component {
 	}
 	//获取验证码
 	getOriginCode () {
-		
+		this.setState({
+			visible:true
+		})
 	}
 	//切换登陆按钮点击样式
 	clickHandle () {

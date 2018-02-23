@@ -1,10 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { hashHistory } from 'react-router';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import Header from '../../components/Header/header';
 import Button from '../../components/Button/button';
 import EditAcount from './subpage/editAcount';
+import store from '../../util/localStore';
+import * as UserInfoActionsFromOtherFile from '../../actions/userinfo'
 
 class UserDetail extends React.Component {
 	constructor (props,context) {
@@ -28,7 +31,9 @@ class UserDetail extends React.Component {
 	
 	//退出登录
 	clickHandle() {
-		
+		window.localStorage.removeItem('USER_CURRENT_USER_NAME');
+		this.props.userInfoActions.update({});
+		hashHistory.push('/');
 	}
 	
 }
@@ -39,9 +44,15 @@ function mapStateToProps (state) {
 	}
 }
 
+function mapDispatchToProps (dispatch) {
+	return {
+		userInfoActions: bindActionCreators(UserInfoActionsFromOtherFile,dispatch),
+	}
+}
+
 const UserDetailContainer = connect (
 	mapStateToProps,
-	null
+	mapDispatchToProps
 )(UserDetail)
 	
 

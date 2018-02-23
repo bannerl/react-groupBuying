@@ -28,10 +28,14 @@ class Login extends React.Component {
 	}
 	
 	componentDidMount () {
+		
 		const userName = this.props.userInfos.userName;
+		console.log(typeof this.props.userInfos)
+		console.log(typeof this.props.userInfos.userName)
 		const localUserName = LocalStore.getItem(LocalStoreKey.USERNAME);
-		if(userName !== ''||localUserName) {
-			this.goUserPage()
+		if(typeof userName !== 'undefined'||localUserName) {
+			this.goUserPage();
+			console.log(222)
 		}
 	}
 	

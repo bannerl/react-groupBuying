@@ -1,6 +1,6 @@
 .toast-wrapper {
     position: absolute;
-    display: block;
+    display: none;
     z-index: 2000;
     transition: all .2s;
     top: 50%;
@@ -10,6 +10,9 @@
     color: #fff;
     background: rgba(0,0,0,.5);
     transform: translate3d(-50%,-50%,0);
+    &.on {
+        display: block;
+    }
     &.middle{
         top: .7rem;
         transform: translate3d(-50%,-50%,0);

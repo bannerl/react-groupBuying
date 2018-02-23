@@ -15,11 +15,12 @@ class Input extends React.Component {
 	}
 	render () {
 		const tips = this.props.placeHolder?this.props.placeHolder:'';
+		const inputType = this.props.inputType?this.props.inputType:'text';
 		const { closeState,value} = this.state;
 		return (
 			<div class="input-bind">
 				<input 
-					type="text" 
+					type={inputType} 
 					ref="value"
 					value={value} 
 					onChange={this.changeHandle.bind(this)} 
@@ -90,7 +91,8 @@ Input.propTypes = {
 	getVal: PropTypes.func,
 	val: PropTypes.string,
 	placeHolder: PropTypes.string,
-	IsFocus: PropTypes.bool
+	IsFocus: PropTypes.bool,
+	inputType: PropTypes.string
 }
 
 export default Input;

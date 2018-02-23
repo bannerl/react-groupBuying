@@ -30,7 +30,7 @@ class HomeAdList extends React.Component {
 				{
 					data.length
 					?data.map((item,i)=>{
-						return <Link class="border-1px-right" to={'/'+item.path} key={i}>
+						return <Link class="border-1px-right" to={'/recommend?router='+item.path} key={i}>
 							<li class="adver-item">
 								<h4 class={'title '+item.color}>{item.title}</h4>
 								<p class="description">{item.description}</p>

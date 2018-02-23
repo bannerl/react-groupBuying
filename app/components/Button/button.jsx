@@ -14,8 +14,6 @@ class Button extends React.Component {
 	}
 	
 	render () {
-		
-		
 		return (
 			<button class={"btn"+this.state.classes} onClick={this.clickHandle.bind(this)}>
 				{this.props.icon?<i class={"iconfont "+this.props.icon}></i>:''}
@@ -52,9 +50,9 @@ class Button extends React.Component {
 	}
 }
 Button.propTypes = {
-	icon:PropTypes.string,
-	title:PropTypes.string.isRequired,
-	classnames:PropTypes.string,
-	clickHandle:PropTypes.func
+	icon:PropTypes.string, //图标
+	title:PropTypes.string.isRequired, //文字
+	classnames:PropTypes.string,  //类名
+	clickHandle:PropTypes.func  //点击事件
 }
 export default Button;

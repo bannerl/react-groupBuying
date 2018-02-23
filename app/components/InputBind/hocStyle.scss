@@ -1,0 +1,14 @@
+.input-bind-wrapper {
+    padding: .08rem .14rem;
+    display: flex;
+    align-items: center;
+}
+
+.input-bind-wrapper .left {
+    width: 0.6rem;
+    text-align: right;
+} 
+
+.input-bind-wrapper .right {
+    flex: 1;
+}

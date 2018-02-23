@@ -13,14 +13,15 @@ class Toast extends React.Component {
 		};
 	}
 	render () {
-		let { message, icon, position, duration } = this.props;
+		let { message, icon, position, duration, show} = this.props;
+		
 		position = position?position:this.state.position;
 		duration = duration?duration:this.state.duration;
 		
 		return (
-			<div class="toast-wrapper">
+			<div class={'toast-wrapper '+(show?'on':'')} >
+				{this.props.children}
 				<div class="content">
-					<i></i>
 					<span>{message}</span>
 				</div>
 			</div>
@@ -29,10 +30,19 @@ class Toast extends React.Component {
 }
 
 Toast.propTypes = {
-	message: PropTypes.string.isRequired,
+	message: PropTypes.string,
 	icon: PropTypes.string,
 	position: PropTypes.string,
-	duration: PropTypes.number
+	duration: PropTypes.number,
+	show: PropTypes.bool
 }
+
+Toast.defaultProps = {
+	message: '你的提示信息没有填写',
+	icon: '',
+	position: 'middle',
+	duration: 3000
+}
+
 
 export default Toast;

@@ -15,6 +15,7 @@ import Collections from '../containers/Collections/collections';
 import UserDetail from '../containers/UserDetail/userDetail';
 import EditWord from '../containers/EditWord/editWord';
 import EditPassword from '../containers/EditPassword/editPassword';
+import Recommend from '../containers/Recommend/recommend';
 
 class RouterMap extends React.Component {
 	render () {
@@ -32,6 +33,7 @@ class RouterMap extends React.Component {
 					<Route path='/collections' component={Collections} />
 					<Route path='/userDetail' component={UserDetail} />
 					<Route path='/editWord' component={EditWord} />
+					<Route path='/recommend' component={Recommend} />
 					<Route path='/editPassword' component={EditPassword} />
 					
 					<Route path='*' component={NotFound} />
