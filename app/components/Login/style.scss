@@ -53,5 +53,19 @@
             background: #e94f4f;
         }
     }
+    .error-tips {
+        position: absolute;
+        display: none;
+        top: 50%;
+        left: 50%;
+        background: rgba(0,0,0,.5);
+        color: #fff;
+        padding: .06rem .14rem;
+        transform: translate3d(-50%,-50%,0);
+        border-radius: .04rem;
+        &.on{
+            display: block;
+        }
+    }
     
 }

@@ -3,9 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import { Link } from 'react-router';
 import './style.scss';
 import Input from '../InputBind/input';
-import { hashHistory } from 'react-router';
-import Dialog from '../Dialog/dialog';
-import Toast from '../Toast/toast';
+import { hashHistory,router } from 'react-router';
 
 class Login extends React.Component {
 	constructor(props,context) {
@@ -15,18 +13,19 @@ class Login extends React.Component {
 			active:false,
 			phone:'',
 			code:'',
-			tipText:''
+			tipText:'',
+			visible:false
 		}
 	};
 	
 	render() {
-		const active = this.state.active;
+		const {visible,active} = this.state;
 		
 		return (
 			<div class="login-wrapper">
 				<div class="content">
 					<div class="phone border-1px">
-						<Input getVal={this.getPhone.bind(this)} placeHolder="请输入手机号" />
+						<Input inputType="tel" getVal={this.getPhone.bind(this)} placeHolder="请输入手机号" />
 						<div class="btn" onClick={this.getOriginCode.bind(this)}>获取验证码</div>
 					</div>
 					<div class="code border-1px">
@@ -34,9 +33,7 @@ class Login extends React.Component {
 					</div>
 					<div class={"login-btn "+(active?'active':'')} onClick={this.clickHandle.bind(this)}>登录</div>
 				</div>
-				<Dialog>
-					<Toast duration={1000} message={this.state.tipText}/>
-				</Dialog>
+				<div class={'error-tips '+(visible?'on':'')} >{this.state.tipText}</div>
 			</div>
 		);
 	};
@@ -47,7 +44,6 @@ class Login extends React.Component {
 				phone:val,
 			})
 		}
-		
 	}
 	//获取输入的验证码
 	getCode (val) {
@@ -57,41 +53,54 @@ class Login extends React.Component {
 			})
 		}
 	}
+	//展示错误提示
+	showToastHandle(tipText,time) {
+		time = time || 1500;
+		this.setState({
+			visible: true,
+			tipText
+		});
+		setTimeout(() => {
+			console.log(34342);
+			console.log(window.href,window.location);
+			
+			this.setState({
+				visible: false
+			});
+			
+		},time);
+	}
 	
 	//获取验证码
 	getOriginCode () {
-		this.setState({
-			tipText:'1234'
-		});
-		
-		
+		this.showToastHandle('1234');
 	}
 	//切换登陆按钮点击样式
 	clickHandle () {
 		this.setState({
 			active:true
-		})
+		});
 		setTimeout(()=>{
 			this.setState({
 				active:false
 			});
 			this.savaData();	
 		},100);
-		
 	}
 	//保存登录状态
 	savaData () {
 		const phone = this.state.phone;
 		const code = this.state.code;
 		//验证是否正确
-		if(/^1[0-9]{10}/.test(phone)){
-			this.props.getData(phone,code);
-		} else {
-			this.setState({
-				tipText:'手机号输入错误'
-			});
+		if(!/^1[0-9]{10}/.test(phone)){
+			this.showToastHandle('手机号输入不正确');
+			return;
+		} 
+		if(code !== '1234'){
+			this.showToastHandle('验证码错误');
+			return;
 		}
-		//this.props.getData(phone,code);
+		this.props.getData(phone,code);
 	}
 	
 }

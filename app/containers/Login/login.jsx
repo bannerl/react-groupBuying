@@ -28,11 +28,14 @@ class Login extends React.Component {
 	}
 	
 	componentDidMount () {
-		
+		if(!this.props.userInfos.userName){
+			return;
+		}
 		const userName = this.props.userInfos.userName;
 		
 		const localUserName = LocalStore.getItem(LocalStoreKey.USERNAME);
-		if(typeof userName !== 'undefined'||localUserName) {
+		console.log(localUserName)
+		if(userName.length !== 0||localUserName != null) {
 			this.goUserPage();
 		}
 	}
@@ -43,6 +46,7 @@ class Login extends React.Component {
 		let params = {
 			phone,code
 		}
+		
 		const result = LoginIn(params);
 		
 		result.then(res=>{
@@ -74,6 +78,7 @@ class Login extends React.Component {
 				hashHistory.replace('/'+router);
 			}
 		} else {
+			console.log(1)
 			hashHistory.replace('/user');
 		}
 	}

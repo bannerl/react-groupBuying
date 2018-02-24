@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { hashHistory } from 'react-router';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import UserSummary from '../../components/UserSummary/userSummary';
 import Cell from '../../components/Cell/cell';
+import { getItem } from '../../util/localStore';
 
 class User extends React.Component {
 	constructor (props,context) {
@@ -19,8 +21,14 @@ class User extends React.Component {
 			</div>
 		)
 	}
+	
+	componentDidMount() {
+		if(!this.props.userInfos.userName){
+			hashHistory.push('/');
+		}
+	}
 }
-
+	
 function mapStateToProps (state) {
 	return {
 		userInfos: state.userinfo,
