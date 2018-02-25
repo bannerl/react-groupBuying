@@ -14,20 +14,20 @@ class UserSummary extends React.Component {
 	}
 	render () {
 		return (
-			<div class="user-summary-wrapper">
-				<div class="return">
-					<i onClick={this.clickHandle.bind(this)} class="iconfont icon-fanhui"></i>
-					<span class="title">个人中心</span>
+			<div className="user-summary-wrapper">
+				<div className="return">
+					<i onClick={this.clickHandle.bind(this)} className="iconfont icon-fanhui"></i>
+					<span className="title">个人中心</span>
 				</div>
-				<img class="bg" src="image/userTopBg.jpg"/>
-				<Link class="user-summary" to={this.props.to}>
-					<img class="avatar" height="60" width="60" src="image/default-avatar.png" />
-					<div class="content">
-						<div class="userName">{this.props.userName}</div>
-						<div class="userCity">{this.props.cityName}</div>
+				<img className="bg" src="image/userTopBg.jpg"/>
+				<Link className="user-summary" to={this.props.to}>
+					<img className="avatar" height="60" width="60" src="image/default-avatar.png" />
+					<div className="content">
+						<div className="userName">{this.props.userName}</div>
+						<div className="userCity">{this.props.cityName}</div>
 					</div>
-					<div class="arrow">
-						<i class="iconfont icon-arrow-right"></i>
+					<div className="arrow">
+						<i className="iconfont icon-arrow-right"></i>
 					</div>
 				</Link>
 			</div>

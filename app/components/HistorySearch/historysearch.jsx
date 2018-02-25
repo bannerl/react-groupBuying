@@ -12,17 +12,17 @@ class HistorySearch extends React.Component {
 	render() {
 		const data = this.props.data;
 		return (
-			<div class="history-search-wrapper">
-				<div class="history-search-title border-1px">
-					<div class='clearfix'>
-						<span class="text float-left">历史搜索</span>
-						<i class="iconfont icon-delete float-right" onClick={this.clickHandle.bind(this)}></i>
+			<div className="history-search-wrapper">
+				<div className="history-search-title border-1px">
+					<div className='clearfix'>
+						<span className="text float-left">历史搜索</span>
+						<i className="iconfont icon-delete float-right" onClick={this.clickHandle.bind(this)}></i>
 					</div>
 				</div>
-				<div class="history-item-wrapper clearfix">
+				<div className="history-item-wrapper clearfix">
 					{data.map((item,i) => {
 						return (
-							<Link to={"/search/all/"+this.props.router+"?kwd="+encodeURIComponent(item)} class="history-item float-left" key={i}>{item}</Link>
+							<Link to={"/search/all/"+this.props.router+"?kwd="+encodeURIComponent(item)} className="history-item float-left" key={i}>{item}</Link>
 						)
 					})}
 				</div>

@@ -13,7 +13,7 @@ class Collections extends React.Component {
 	}
 	render () {
 		return (
-			<div class="user-wrapper">
+			<div className="user-wrapper">
 				<Header title="收藏"/>
 				<CollectionList id={this.props.userInfos.userName} />
 			</div>

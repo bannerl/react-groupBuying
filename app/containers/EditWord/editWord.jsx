@@ -21,12 +21,12 @@ class EditWord extends React.Component {
 	render () {
 		
 		return (
-			<div class="editWord-wrapper">
+			<div className="editWord-wrapper">
 				<Header title='编辑用户名' />
-				<div class="content">
+				<div className="content">
 					<Input IsFocus getVal={this.getVal.bind(this)} value={this.props.userInfos.userName} />
 				</div>
-				<div class="editWord-confirm">
+				<div className="editWord-confirm">
 					<Button clickHandle={this.clickHandle.bind(this)} type="warning" size="large" title="保存" />
 				</div>
 			</div>

@@ -22,7 +22,7 @@ class FavoriteList extends React.Component {
 		const {isLoading,data,hasMore} = this.state;
 		return (
 			<div>
-				<h3 class="home-favo-title border-1px">猜你喜欢</h3>
+				<h3 className="home-favo-title border-1px">猜你喜欢</h3>
 				<ShopList data={data} />
 				{
 					data.length

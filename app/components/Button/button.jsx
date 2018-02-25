@@ -15,8 +15,8 @@ class Button extends React.Component {
 	
 	render () {
 		return (
-			<button class={"btn"+this.state.classes} onClick={this.clickHandle.bind(this)}>
-				{this.props.icon?<i class={"iconfont "+this.props.icon}></i>:''}
+			<button className={"btn"+this.state.classes} onClick={this.clickHandle.bind(this)}>
+				{this.props.icon?<i className={"iconfont "+this.props.icon}></i>:''}
 				<label>{this.props.title}</label>
 			</button>
 		)

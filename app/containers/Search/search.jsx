@@ -28,7 +28,7 @@ class Search extends React.Component {
 	render() {
 		const {isLoading,hasMore} = this.state;
 		return (
-			<div class="search-input-page">
+			<div className="search-input-page">
 				<SearchHeader router={this.state.router} getData={this.getData.bind(this)} />
 				{
 					this.state.isResult

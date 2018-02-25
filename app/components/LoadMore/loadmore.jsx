@@ -17,8 +17,8 @@ class LoadMore extends React.Component {
 	render () {
 		const {hasMore,isLoading} = this.props;
 		return (
-			<div class={(hasMore?"":"hidden")+" load-more"} onClick={this.clickHandle.bind(this)}>
-			{isLoading?<div><span class="home-loading-animation"></span></div>:'加载更多'}
+			<div className={(hasMore?"":"hidden")+" load-more"} onClick={this.clickHandle.bind(this)}>
+			{isLoading?<div><span className="home-loading-animation"></span></div>:'加载更多'}
 			</div>
 		)
 	}

@@ -14,35 +14,35 @@ class Cell extends React.Component {
 			color:this.props.iconColor?this.props.iconColor:'#1890FF'
 		}
 		return (
-			<div class="cell-wrapper border-1px" onClick={this.clickHandle.bind(this)}>
+			<div className="cell-wrapper border-1px" onClick={this.clickHandle.bind(this)}>
 			{
 				this.props.to
-				?<Link class="cell-content" to={this.props.to}>
-					<div class="cell-left">
-						<i style={styles} class={"iconfont "+(this.props.icon?this.props.icon:'')}></i>
+				?<Link className="cell-content" to={this.props.to}>
+					<div className="cell-left">
+						<i style={styles} className={"iconfont "+(this.props.icon?this.props.icon:'')}></i>
 					</div>
-					<div class="cell-center">
+					<div className="cell-center">
 						{this.props.title}
 					</div>
-					<div class="cell-right">
-						<div class="text">
+					<div className="cell-right">
+						<div className="text">
 						{this.props.value?this.props.value:''}
 						</div>
-						{this.props.to?<i class="iconfont icon-arrow-right" ></i>:''}
+						{this.props.to?<i className="iconfont icon-arrow-right" ></i>:''}
 					</div>
 				</Link>
-				:<div class="cell-content">
-					<div class="cell-left">
-						<i style={styles} class={"iconfont "+(this.props.icon?this.props.icon:'')}></i>
+				:<div className="cell-content">
+					<div className="cell-left">
+						<i style={styles} className={"iconfont "+(this.props.icon?this.props.icon:'')}></i>
 					</div>
-					<div class="cell-center">
+					<div className="cell-center">
 						{this.props.title}
 					</div>
-					<div class="cell-right">
-						<div class="text">
+					<div className="cell-right">
+						<div className="text">
 						{this.props.value?this.props.value:''}
 						</div>
-						<i class="iconfont icon-arrow-right" ></i>
+						<i className="iconfont icon-arrow-right" ></i>
 					</div>
 				</div>
 			}

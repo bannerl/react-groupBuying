@@ -22,18 +22,18 @@ class Login extends React.Component {
 		const {visible,active} = this.state;
 		
 		return (
-			<div class="login-wrapper">
-				<div class="content">
-					<div class="phone border-1px">
+			<div className="login-wrapper">
+				<div className="content">
+					<div className="phone border-1px">
 						<Input inputType="tel" getVal={this.getPhone.bind(this)} placeHolder="请输入手机号" />
-						<div class="btn" onClick={this.getOriginCode.bind(this)}>获取验证码</div>
+						<div className="btn" onClick={this.getOriginCode.bind(this)}>获取验证码</div>
 					</div>
-					<div class="code border-1px">
+					<div className="code border-1px">
 						<Input getVal={this.getCode.bind(this)}  placeHolder="请输入验证码" />
 					</div>
-					<div class={"login-btn "+(active?'active':'')} onClick={this.clickHandle.bind(this)}>登录</div>
+					<div className={"login-btn "+(active?'active':'')} onClick={this.clickHandle.bind(this)}>登录</div>
 				</div>
-				<div class={'error-tips '+(visible?'on':'')} >{this.state.tipText}</div>
+				<div className={'error-tips '+(visible?'on':'')} >{this.state.tipText}</div>
 			</div>
 		);
 	};

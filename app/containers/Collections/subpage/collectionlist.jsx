@@ -23,11 +23,11 @@ class OrderList extends React.Component {
 			
 		}
 		return (
-			<ul class="order-wrapper">
+			<ul className="order-wrapper">
 				{
 					this.state.data.length
 					?<OrderListComponent data={this.state.data} />
-					:<div class="noCollectionsData" style={styles}>
+					:<div className="noCollectionsData" style={styles}>
 						暂无收藏记录
 					</div>
 				}

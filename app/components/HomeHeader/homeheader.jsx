@@ -11,18 +11,18 @@ class HomeHeader extends React.Component {
 	}
 	render () {
 		return (
-			<div class="home-header">
-				<div class="city">
+			<div className="home-header">
+				<div className="city">
 					<Link to="/city">
 						{this.props.cityName}
-						<i class="iconfont icon-xiala"></i>
+						<i className="iconfont icon-xiala"></i>
 					</Link>	
 				</div>
-				<div class="search">
+				<div className="search">
 					<SearchInput linkTo="/search/all/index"/>
 				</div>
-				<Link class="user" to='/login'>
-					<i class="iconfont icon-user"></i>
+				<Link className="user" to='/login'>
+					<i className="iconfont icon-user"></i>
 				</Link>
 			</div>
 		)

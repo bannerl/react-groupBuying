@@ -12,12 +12,12 @@ class HotSearch extends React.Component {
 	render() {
 		const data = this.props.data;
 		return (
-			<div class="hot-search-wrapper">
-				<div class="hot-search-title border-1px">热门搜索</div>
-				<div class="hot-item-wrapper clearfix">
+			<div className="hot-search-wrapper">
+				<div className="hot-search-title border-1px">热门搜索</div>
+				<div className="hot-item-wrapper clearfix">
 					{data.map((item,i) => {
 						return (
-							<Link to={"/search/all/"+this.props.router+'?kwd='+encodeURIComponent(item)} class="hot-item float-left" key={i}>{item}</Link>
+							<Link to={"/search/all/"+this.props.router+'?kwd='+encodeURIComponent(item)} className="hot-item float-left" key={i}>{item}</Link>
 						)
 					})}
 				</div>

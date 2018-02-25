@@ -37,7 +37,7 @@ class EditPassword extends React.Component {
 				<HocInput tipText="新密码" inputType="password" getVal={this.getPassWordHandle.bind(this)} placeHolder="请输入新密码" />
 				<HocInput tipText="确认密码" inputType="password" getVal={this.getPassWordAgainHandle.bind(this)} placeHolder="请再次输入新密码" />
 				<HocButton clickHandle={this.clickHandle.bind(this)} title="保存" type="danger" size="large" />
-				<div style={style} class="toast-tips">{this.state.tips}</div>
+				<div style={style} className="toast-tips">{this.state.tips}</div>
 			</div>
 		);
 	};

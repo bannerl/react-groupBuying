@@ -13,7 +13,7 @@ class UserOrder extends React.Component {
 	}
 	render () {
 		return (
-			<div class="user-wrapper">
+			<div className="user-wrapper">
 				<Header title="订单"/>
 				<OrderList id={this.props.userInfos.userName} />
 			</div>

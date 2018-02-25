@@ -22,9 +22,9 @@ class Toast extends React.Component {
 		duration = duration?duration:this.state.duration;
 		
 		return (
-			<div class={'toast-wrapper '+(this.state.visible?'on':'')} >
+			<div className={'toast-wrapper '+(this.state.visible?'on':'')} >
 				{this.props.children}
-				<div class="content">
+				<div className="content">
 					<span>{this.state.message}</span>
 				</div>
 			</div>

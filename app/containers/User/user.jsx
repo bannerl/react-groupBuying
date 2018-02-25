@@ -14,7 +14,7 @@ class User extends React.Component {
 	}
 	render () {
 		return (
-			<div class="user-wrapper">
+			<div className="user-wrapper">
 				<UserSummary backUrl="/" to="/userDetail" cityName={this.props.userInfos.cityName} userName={this.props.userInfos.userName} />
 				<Cell title="我的订单" to="/orders" icon="icon-activity_fill"/>
 				<Cell title="我的收藏" to="/collections" icon="icon-collection_fill" iconColor="#ff3131" />

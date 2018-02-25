@@ -12,9 +12,9 @@ function HocInput(Input) {
 		render () {
 			
 			return (
-				<div class="input-bind-wrapper border-1px">
-					<div class="left">{this.props.tipText}</div>
-					<div class="right">
+				<div className="input-bind-wrapper border-1px">
+					<div className="left">{this.props.tipText}</div>
+					<div className="right">
 						<Input {...this.props} />
 					</div>
 				</div>

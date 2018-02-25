@@ -10,46 +10,40 @@ module.exports = {
         path: __dirname + "/build",
         filename: "js/[name].[hash].js"
     },
-    devtool: 'eval-source-map', 
-    devServer: {
-        contentBase: "./public", //本地服务器所加载的页面所在的目录
-        historyApiFallback: true, //不跳转
-        inline: true,
-        hot: true
-    },
+    devtool: 'eval-source-map',
     resolve:{
     	extensions:['.js','.jsx']
 	},
     module: {
-        rules: [{
-            test: /(\.jsx|\.js)$/,
-            use: {
-                loader: "babel-loader"
-            },
-            exclude: /node_modules/
-        }, 
+        rules: [
+        {
+	        test: /(\.jsx|\.js)$/,
+	        exclude: /node_modules/,
+	        loader: "babel-loader"
+   		},
         {
 			test: /\.scss$/,
         	use:ExtractTextPlugin.extract({
                     fallback:'style-loader',
                     use:[{
-                    loader: "css-loader",
-                    options: {
-                        modules: true,
-                        localIdentName: '[name]__[local]--[hash:base64:5]'
-                    }
+                    loader: "css-loader"
                 },'sass-loader']    
                 })
 		},
+		{ 
+			 	test:/\.(png|gif|jpg|jpeg|bmp)$/i, 
+			 	loader:'url-loader?limit=4000,&name=images/[hash:8].[name].[ext]' 
+			},  // 限制大小8kb
+			{ 
+				test:/\.(png|woff|woff2|svg|ttf|eot)($|\?)/i,
+				loader:'url-loader?limit=8000'
+			},// 限制大小小于8kb
         {
             test: /\.css$/,
             use: ExtractTextPlugin.extract({
                 fallback: "style-loader",
                 use: [{
-                    loader: "css-loader",
-                    options: {
-                        modules: true
-                    }
+                    loader: "css-loader"
                 },{
                     loader: "postcss-loader"
                 }]

@@ -14,21 +14,21 @@ class Notice extends React.Component {
 		var time =new Date();
 		
 		const contentData = this.props.data
-		?<div class="content-wrapper">
-			<div class="yellow">有效期</div>
-			<div class="validaty">
+		?<div className="content-wrapper">
+			<div className="yellow">有效期</div>
+			<div className="validaty">
 			 	{formatTime((new Date(this.props.data.validity.startTime-0)),'yyyy-MM-dd')}
 			 	&nbsp;至&nbsp;{formatTime((new Date(this.props.data.validity.endTime-0)),'yyyy-MM-dd')}
 			</div>
-			<div class="yellow">有效期</div>
-			<div class="use-text">
+			<div className="yellow">有效期</div>
+			<div className="use-text">
 			 	{this.props.data.time}
 			</div>
-			<div class="yellow">使用规则</div>
-			<ul class="tips">
+			<div className="yellow">使用规则</div>
+			<ul className="tips">
 				{
 					this.props.data.rules.map((item,i) => {
-						return (<li class="item" key={i}>
+						return (<li className="item" key={i}>
 							{item}
 						</li>)
 					})
@@ -37,8 +37,8 @@ class Notice extends React.Component {
 		</div>
 		:'加载中...';
 		return (
-			<div class="detail-notice">
-				<div class="title border-1px">购买须知</div>
+			<div className="detail-notice">
+				<div className="title border-1px">购买须知</div>
 				{contentData}
 			</div>
 		)

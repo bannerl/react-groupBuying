@@ -18,7 +18,7 @@ class Input extends React.Component {
 		const inputType = this.props.inputType?this.props.inputType:'text';
 		const { closeState,value} = this.state;
 		return (
-			<div class="input-bind">
+			<div className="input-bind">
 				<input 
 					type={inputType} 
 					ref="value"
@@ -27,7 +27,7 @@ class Input extends React.Component {
 					onKeyUp={this.KeyUpHandle.bind(this,value)}
 					placeholder={tips}
 				/>
-				{ closeState?<span class="iconfont icon-close" onClick={this.deleteText.bind(this)}></span>:'' }
+				{ closeState?<span className="iconfont icon-close" onClick={this.deleteText.bind(this)}></span>:'' }
 			</div>
 		)
 	}

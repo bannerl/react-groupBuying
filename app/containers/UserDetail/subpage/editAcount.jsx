@@ -14,7 +14,7 @@ class EditAcount extends React.Component {
 	}
 	render () {
 		return (
-			<div class="userDetail-content">
+			<div className="userDetail-content">
 				<Cell to="/editWord" title={this.props.userInfos.userName} icon="icon-user-little" value="修改"/>
 				<Cell to="/editPassword" title='修改密码' icon="icon-lock_fill" />
 			</div>

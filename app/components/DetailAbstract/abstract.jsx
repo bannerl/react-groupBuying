@@ -20,20 +20,20 @@ class Abstract extends React.Component {
 			'icon-star-full':this.props.isStore
 		});
 		return (
-			<div class="detail-abstract">
-				<div class="image-wrapper">
+			<div className="detail-abstract">
+				<div className="image-wrapper">
 					<img src={data.image} />
-					<div class="content">
-						<h3 class="title">{data.title}</h3>
-						<p class="desc">{data.description}</p>
+					<div className="content">
+						<h3 className="title">{data.title}</h3>
+						<p className="desc">{data.description}</p>
 					</div>
 				</div>
-				<div class="price-wrapper border-1px">
-					<span class="float-left price">{data.price}</span>
-					<div class="float-right">
+				<div className="price-wrapper border-1px">
+					<span className="float-left price">{data.price}</span>
+					<div className="float-right">
 						<Button type="danger" size="small" title="立即抢购" clickHandle={this.buyClickHandle.bind(this)} />
 					</div>
-					<div  class="float-right collection">
+					<div  className="float-right collection">
 						<Button type="warning"  size="small"
 							icon={this.props.isStore?'icon-star-full':"icon-star"} 
 							title={this.props.isStore?'已收藏':"收藏"} 

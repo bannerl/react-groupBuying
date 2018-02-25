@@ -18,16 +18,16 @@ class HomeFavoriteList extends React.Component {
 		?data.map((item,i)=>{
 			return (
 				<Link to={'/shop/'+item.id+'?id='+Math.floor(Math.random()*10)} key={i}>
-					<li class="favo-item border-1px">
-						<div class="image-wrapper">
+					<li className="favo-item border-1px">
+						<div className="image-wrapper">
 							<img src={item.image} alt="商品" />
 						</div>
-						<div class="content">
-							<h4 class="title ellipse">{item.title}</h4>
-							<p class="description">{item.description}</p>
-							<div class="abstract clearfix">
-								<span class="price float-left">￥{item.price}</span>
-								<span class="count float-right">已售{item.totalCount}</span>
+						<div className="content">
+							<h4 className="title ellipse">{item.title}</h4>
+							<p className="description">{item.description}</p>
+							<div className="abstract clearfix">
+								<span className="price float-left">￥{item.price}</span>
+								<span className="count float-right">已售{item.totalCount}</span>
 							</div>
 						</div>
 					</li>
@@ -35,7 +35,7 @@ class HomeFavoriteList extends React.Component {
 		})
 		:<ListLoadBg count={6} />;
 		return (
-			<ul class="home-favo-wrapper" >
+			<ul className="home-favo-wrapper" >
 				{dataContent}
 			</ul>
 		)

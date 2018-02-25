@@ -11,11 +11,11 @@ class Header extends React.Component {
 	
 	render() {
 		return (
-			<div class="header">
-				<div class="return" onClick={this.clickHandle.bind(this)}>
-					<i class="iconfont icon-fanhui"></i>
+			<div className="header">
+				<div className="return" onClick={this.clickHandle.bind(this)}>
+					<i className="iconfont icon-fanhui"></i>
 				</div>
-				<div class="title">{this.props.title}</div>
+				<div className="title">{this.props.title}</div>
 			</div>
 		);
 	};

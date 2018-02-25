@@ -10,7 +10,7 @@ class NoMore extends React.Component {
 	}
 	render () {
 		return (
-			<div class="no-more"><div class="text">没有更多了</div></div>
+			<div className="no-more"><div className="text">没有更多了</div></div>
 		)
 	}
 }

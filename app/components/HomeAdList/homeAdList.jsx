@@ -26,21 +26,21 @@ class HomeAdList extends React.Component {
 		});
 		
 		return (
-			<ul class="home-ad-wrapper" >
+			<ul className="home-ad-wrapper" >
 				{
 					data.length
 					?data.map((item,i)=>{
-						return <Link class="border-1px-right" to={'/recommend?router='+item.path} key={i}>
-							<li class="adver-item">
-								<h4 class={'title '+item.color}>{item.title}</h4>
-								<p class="description">{item.description}</p>
-								<div class="image-wrapper">
+						return <Link className="border-1px-right" to={'/recommend?router='+item.path} key={i}>
+							<li className="adver-item">
+								<h4 className={'title '+item.color}>{item.title}</h4>
+								<p className="description">{item.description}</p>
+								<div className="image-wrapper">
 									<img src={item.url} />
 								</div>
 							</li>
 						</Link>
 					})
-					:<div class="loading">
+					:<div className="loading">
 						<img src='./image/homeAdBg.svg' />
 					</div> 
 				}

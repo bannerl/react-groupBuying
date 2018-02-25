@@ -14,7 +14,7 @@ class OrderList extends React.Component {
 	}
 	render () {
 		return (
-			<ul class="order-wrapper">
+			<ul className="order-wrapper">
 				{
 					this.state.data.length
 					?<OrderListComponent data={this.state.data} />

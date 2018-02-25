@@ -18,11 +18,11 @@ class SearchInputPage extends React.Component {
 	
 	render() {
 		return (
-			<div class="s-i-header">
-				<div class="return" onClick={this.clickHandleReturn.bind(this)}>
-					<i class="iconfont icon-fanhui"></i>
+			<div className="s-i-header">
+				<div className="return" onClick={this.clickHandleReturn.bind(this)}>
+					<i className="iconfont icon-fanhui"></i>
 				</div>
-				<div class="content">
+				<div className="content">
 					<InputBind 
 						keyUpHandle={this.KeyUpHandle.bind(this)} 
 						getVal={this.getValue.bind(this)}
@@ -30,8 +30,8 @@ class SearchInputPage extends React.Component {
 						placeHolder="请输入关键字"
 					/>
 				</div>
-				<div class="search-btn">
-					<a class="text" onClick={this.clickHandle.bind(this)}>搜索</a>
+				<div className="search-btn">
+					<a className="text" onClick={this.clickHandle.bind(this)}>搜索</a>
 				</div>
 			</div>
 		);

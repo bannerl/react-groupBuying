@@ -14,7 +14,7 @@ class SearchInput extends React.Component {
 	render () {
 		return (
 			<Link to={this.props.linkTo}>
-				<div class="modal-search-input">
+				<div className="modal-search-input">
 					请输入关键字
 				</div>
 			</Link>

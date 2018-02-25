@@ -22,7 +22,7 @@ class ListloadBg extends React.Component {
 		:5;
 		
 		return (
-			<div class="listload-wrapper">
+			<div className="listload-wrapper">
 				{content}
 			</div>
 		)

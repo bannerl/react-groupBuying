@@ -19,10 +19,10 @@ class UserDetail extends React.Component {
 			color:this.props.iconColor?this.props.iconColor:'#1890FF'
 		}
 		return (
-			<div class="userDetail-wrapper">
+			<div className="userDetail-wrapper">
 				<Header title="我的账户" />
 				<EditAcount userInfos={this.props.userInfos} />
-				<div class="loginOut-content">
+				<div className="loginOut-content">
 					<Button title="退出登录" type="warning" size="large" clickHandle={this.clickHandle.bind(this)} />
 				</div>
 			</div>
