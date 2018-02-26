@@ -5,12 +5,26 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
-    entry: __dirname + "/app/index.js", 
+    entry: {
+    	app: __dirname + "/app/index.js",
+    	vendor: [
+	      'react', 
+	      'react-dom', 
+	      'react-redux', 
+	      'react-router', 
+	      'redux', 
+	      'es6-promise', 
+	      'whatwg-fetch', 
+	      'immutable',
+	      'react-swipe'
+	    ]
+    },
     output: {
         path: __dirname + "/build",
-        filename: "js/[name].[hash].js"
+        filename: "js/[name].[hash].min.js",
+        chunkFilename: "js/[name].[hash].min.js"
     },
-    devtool: 'eval-source-map',
+    devtool: 'null',
     resolve:{
     	extensions:['.js','.jsx']
 	},
@@ -55,12 +69,24 @@ module.exports = {
             template: __dirname + "/app/index.tmpl.html" //new 一个这个插件的实例，并传入相关的参数
         }),
         new webpack.optimize.OccurrenceOrderPlugin(), //热加载插件
-        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.UglifyJsPlugin({
+        	compress: {
+	            warnings: false
+	        }
+        }),
         new ExtractTextPlugin("/css/style.css"),
         new CleanWebpackPlugin('build/*.*', {
 		    root: __dirname,
 		    verbose: true,
 		    dry: false
-		})
+		}),
+		new webpack.DefinePlugin({
+	      	"process.env": {
+            	NODE_ENV: JSON.stringify("production")
+        	}
+	    }),
+	    new webpack.DefinePlugin({
+	      __DEV__: JSON.stringify(JSON.parse((process.env.NODE_ENV == 'dev') || 'false'))
+	    })
     ],
 };

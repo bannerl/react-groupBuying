@@ -1,59 +1,116 @@
 import React from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
 
-const Index = require.ensure([], (r) => r(require('../containers/index')), 'index')
-//const Index = r => require.ensure([], () => r(require('../containers/index')), 'index')
-//const Home = r => require.ensure([], () => r(require('../containers/Home/home')), 'index')
-//const NotFound = r => require.ensure([], () => r(require('../containers/404')), 'notFound')
-//const Detail = r => require.ensure([], () => r(require('../containers/Detail/detail')), 'detail')
-//const City = r => require.ensure([], () => r(require('../containers/City/city')), 'city')
-//const Search = r => require.ensure([], () => r(require('../containers/Search/search')), 'search')
-//const User = r => require.ensure([], () => r(require('../containers/User/user')), 'user')
-//const Login = r => require.ensure([], () => r(require('../containers/Login/login')), 'login')
-//const ShopsType = r => require.ensure([], () => r(require('../containers/ShopsType/shopstype')), 'shopsType')
-//const UserOrder = r => require.ensure([], () => r(require('../containers/UserOrder/userOrder')), 'userOrder')
-//const Collections = r => require.ensure([], () => r(require('../containers/Collections/collections')), 'collections')
-//const UserDetail = r => require.ensure([], () => r(require('../containers/UserDetail/userDetail')), 'userDetail')
-//const EditWord = r => require.ensure([], () => r(require('../containers/EditWord/editWord')), 'editWord')
-//const EditPassword = r => require.ensure([], () => r(require('../containers/EditPassword/editPassword')), 'editPassword')
-//const Recommend = r => require.ensure([], () => r(require('../containers/Recommend/recommend')), 'recommend')
+const Index = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/index').default)
+    },'index')
+}
 
-//import Index from '../containers/index';
-import Home from '../containers/Home/home';
-import NotFound from '../containers/404';
-import Detail from '../containers/Detail/detail';
-import City from '../containers/City/city';
-import Search from '../containers/Search/search';
-import User from '../containers/User/user';
-import Login from '../containers/Login/login';
-import ShopsType from '../containers/ShopsType/shopstype';
-import UserOrder from '../containers/UserOrder/userOrder';
-import Collections from '../containers/Collections/collections';
-import UserDetail from '../containers/UserDetail/userDetail';
-import EditWord from '../containers/EditWord/editWord';
-import EditPassword from '../containers/EditPassword/editPassword';
-import Recommend from '../containers/Recommend/recommend';
+const Home = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/Home/home').default)
+    },'home')
+}
+
+const NotFound = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/404').default)
+    },'notFound')
+}
+
+const Detail = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/Detail/detail').default)
+    },'detail')
+}
+
+const City = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/City/city').default)
+    },'city')
+}
+
+const Search = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/Search/search').default)
+    },'search')
+}
+
+const User = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/User/user').default)
+    },'user')
+}
+
+const Login = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/Login/login').default)
+    },'login')
+}
+
+const ShopsType = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/ShopsType/shopstype').default)
+    },'shopsType')
+}
+
+const UserOrder = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/UserOrder/userOrder').default)
+    },'userOrder')
+}
+
+const Collections = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/Collections/collections').default)
+    },'collections')
+}
+
+const UserDetail = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/UserDetail/userDetail').default)
+    },'uerDetail')
+}
+
+const EditWord = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/EditWord/editWord').default)
+    },'editWord')
+}
+
+const EditPassword = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/EditPassword/editPassword').default)
+    },'editPassword')
+}
+
+const Recommend = (location, cb) => {
+    require.ensure([], require => {
+        cb(null, require('../containers/Recommend/recommend').default)
+    },'recommend')
+}
 
 class RouterMap extends React.Component {
 	render () {
 		return (
 			<Router history={this.props.history}>
-				<Route path="/" component={Index} >
-					<IndexRoute component={Home} />
-					<Route path="/shop/:id" component={Detail} />
-					<Route path='/city' component={City} />
-					<Route path='/shopsType/:type' component={ShopsType} />
-					<Route path='/search/:type(/:router)' component={Search} />
-					<Route path='/user' component={User} />
-					<Route path='/login(/:router)(/:id)' component={Login} />
-					<Route path='/orders' component={UserOrder} />
-					<Route path='/collections' component={Collections} />
-					<Route path='/userDetail' component={UserDetail} />
-					<Route path='/editWord' component={EditWord} />
-					<Route path='/recommend' component={Recommend} />
-					<Route path='/editPassword' component={EditPassword} />
+				<Route path="/" getComponent={Index} >
+					<IndexRoute getComponent={Home} />
+					<Route path="/shop/:id" getComponent={Detail} />
+					<Route path='/city' getComponent={City} />
+					<Route path='/shopsType/:type' getComponent={ShopsType} />
+					<Route path='/search/:type(/:router)' getComponent={Search} />
+					<Route path='/user' getComponent={User} />
+					<Route path='/login(/:router)(/:id)' getComponent={Login} />
+					<Route path='/orders' getComponent={UserOrder} />
+					<Route path='/collections' getComponent={Collections} />
+					<Route path='/userDetail' getComponent={UserDetail} />
+					<Route path='/editWord' getComponent={EditWord} />
+					<Route path='/recommend' getComponent={Recommend} />
+					<Route path='/editPassword' getComponent={EditPassword} />
 					
-					<Route path='*' component={NotFound} />
+					<Route path='*' getComponent={NotFound} />
 				</Route>
 			</Router>
 		)

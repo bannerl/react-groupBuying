@@ -61,8 +61,6 @@ class Login extends React.Component {
 			tipText
 		});
 		setTimeout(() => {
-			console.log(34342);
-			console.log(window.href,window.location);
 			
 			this.setState({
 				visible: false

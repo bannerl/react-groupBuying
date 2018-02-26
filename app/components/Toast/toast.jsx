@@ -32,17 +32,15 @@ class Toast extends React.Component {
 	}
 	
 	componentWillReceiveProps(e){
-		console.log(e)
+		
 		let timer;
 		if(e.message.length === 0){
 			return;
 		}
 		
-		console.log(this.props.message,e.message)
-		console.log(e.message)
 		
 		if(this.props.message != e.message){
-			console.log((new Date()).getTime() - this.state.time)
+			
 			if(!(new Date()).getTime() - this.state.time>e.duration){
 				return;
 			}
@@ -60,7 +58,7 @@ class Toast extends React.Component {
 			},e.duration);
 			return;
 		}else{
-			console.log((new Date()).getTime() - this.state.time)
+			
 			if(!(new Date()).getTime() - this.state.time>e.duration){
 				return;
 			}

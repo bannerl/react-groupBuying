@@ -42,7 +42,7 @@ class EditPassword extends React.Component {
 		);
 	};
 	getPassWordHandle(passw) {
-		console.log(passw)
+		
 		this.setState({
 			passw
 		})

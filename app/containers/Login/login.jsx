@@ -34,7 +34,7 @@ class Login extends React.Component {
 		const userName = this.props.userInfos.userName;
 		
 		const localUserName = LocalStore.getItem(LocalStoreKey.USERNAME);
-		console.log(localUserName)
+		
 		if(userName.length !== 0||localUserName != null) {
 			this.goUserPage();
 		}
@@ -78,7 +78,7 @@ class Login extends React.Component {
 				hashHistory.replace('/'+router);
 			}
 		} else {
-			console.log(1)
+			
 			hashHistory.replace('/user');
 		}
 	}
