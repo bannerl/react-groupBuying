@@ -107,4 +107,4 @@ router.get('/api/user/collection',function(ctx,next) {
 
 router=route(router)  //对router添加所有的匹配对象
 app.use(router.routes())  //加载router中间件
-app.listen(8080)  
+app.listen(8081)  
