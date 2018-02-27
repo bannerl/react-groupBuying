@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>我的作品</title>
+  <link rel="stylesheet" href="./layui/css/layui.css" media="all">
+  <style>
+    body{margin: 10px;}
+    .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
+    #footer a{
+    	display: block;
+    	
+    }
+  </style>
+</head>
+<body>
+ 
+
+<div class="layui-tab layui-tab-brief" lay-filter="demo">
+  <div class="layui-tab-content">
+    <div class="layui-tab-item layui-show">
+      <div class="layui-carousel" id="test1">
+        <div carousel-item>
+          <div><p class="layui-bg-green demo-carousel">react 项目 -- 团购网站</p></div>
+          <div><p class="layui-bg-red demo-carousel">vue 项目 -- 饿了么</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<blockquote class="layui-elem-quote layui-quote-nm" id="footer"><a target="_blank" href="http://106.14.169.113:8081"> react 项目 -- 团购网站</a></blockquote>
+<blockquote class="layui-elem-quote layui-quote-nm" id="footer"> <a target="_blank" href="http://106.14.169.113:8080">vue 项目 -- 饿了么</a></blockquote>
+<blockquote class="layui-elem-quote layui-quote-nm" id="footer"> <a target="_blank" href="https://github.com/bannerl/react-groupBuying">react 项目 -- 源码</a></blockquote>
+<blockquote class="layui-elem-quote layui-quote-nm" id="footer"> <a target="_blank" href="https://github.com/bannerl/my-project">vue 项目 -- 源码</a></blockquote>
+<blockquote class="layui-elem-quote layui-quote-nm" id="footer"> <a target="_blank" href="https://www.jianshu.com/u/eb87feba8a52">博客 简书 </a></blockquote>
+
+<script src="./layui/layui.js?t=1515376178738"></script>
+<script>
+	
+layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element'], function(){
+  carousel = layui.carousel //轮播
+ 	 layer.msg('提示：请打开手机模拟器查看！');
+  carousel.render({
+    elem: '#test1'
+    ,width: '100%' //设置容器宽度
+    ,height: 200
+    ,arrow: 'none' //不显示箭头
+    ,anim: 'fade' //切换动画方式
+  });
+});
+</script>
+</body>
+</html>        
+        

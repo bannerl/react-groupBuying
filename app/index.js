@@ -8,6 +8,8 @@ import './static/css/common.scss';
 import RouterMap from './router/router';
 import ConfigStore from './store/configureStore';
 
+import './util/rem.js';
+
 const store = ConfigStore();
 
 render (
